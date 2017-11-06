@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2017 at 04:55 PM
+-- Generation Time: Nov 06, 2017 at 02:57 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -242,26 +242,6 @@ INSERT INTO `photos` (`id`, `file`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `poslogs`
---
-
-CREATE TABLE `poslogs` (
-  `id` int(11) NOT NULL,
-  `date` varchar(250) NOT NULL,
-  `branch` varchar(250) NOT NULL,
-  `user` varchar(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `poslogs`
---
-
-INSERT INTO `poslogs` (`id`, `date`, `branch`, `user`) VALUES
-(1722223260, '2017 10 24', 'Main', NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `roles`
 --
 
@@ -281,7 +261,36 @@ INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VA
 (1, 'Administrator', 'The Leader', NULL, '2017-10-18 09:05:16'),
 (2, 'Regular', '6  months and counting', NULL, '2017-10-09 19:05:07'),
 (3, 'Provisionary', 'Not Reqgular', '2017-10-09 18:59:39', '2017-10-09 18:59:39'),
-(4, 'Test', 'Testing', '2017-10-09 19:05:22', '2017-10-09 19:05:22');
+(4, 'Test', 'Testing', '2017-10-09 19:05:22', '2017-10-09 19:05:22'),
+(5, 'test', 'test', '2017-10-31 02:44:50', '2017-10-31 02:44:50'),
+(6, 'test', 'testy', '2017-10-31 03:05:51', '2017-10-31 03:05:51'),
+(7, 'Asdasd', 'as', '2017-10-31 03:06:04', '2017-10-31 07:59:32'),
+(8, 'asdf', 'asd', '2017-10-31 03:07:27', '2017-10-31 03:07:27'),
+(9, 'asd', 'asdf', '2017-10-31 03:18:20', '2017-10-31 03:18:20'),
+(10, 'qwe', 'qwe', '2017-10-31 04:19:27', '2017-10-31 04:19:27'),
+(11, 'zxc', 'zxc', '2017-10-31 04:19:47', '2017-10-31 04:19:47'),
+(12, 'fghj', 'fhg', '2017-10-31 04:21:44', '2017-10-31 04:21:44'),
+(13, 'sad', 'asd', '2017-10-31 04:22:01', '2017-10-31 04:22:01'),
+(14, 'hj', 'hgj', '2017-10-31 05:02:17', '2017-10-31 05:02:17'),
+(15, '24', '21', '2017-10-31 06:45:20', '2017-10-31 06:45:20'),
+(16, 'Aa', 'as', '2017-10-31 06:55:46', '2017-10-31 06:55:46'),
+(17, '123', '123', '2017-10-31 07:28:29', '2017-10-31 07:28:29'),
+(18, 'fsda', 'asfd', '2017-10-31 07:30:18', '2017-10-31 07:30:18'),
+(19, 'jki', 'kj', '2017-10-31 07:38:34', '2017-10-31 07:38:34'),
+(20, '12', '11', '2017-10-31 07:39:46', '2017-10-31 07:39:46'),
+(21, 'qw', 'ww', '2017-10-31 07:40:41', '2017-10-31 07:40:41'),
+(22, '1', '11', '2017-10-31 07:41:18', '2017-10-31 07:41:18'),
+(23, '121', '123', '2017-10-31 07:43:41', '2017-10-31 07:43:41'),
+(24, '1', '11', '2017-10-31 07:44:37', '2017-10-31 07:44:37'),
+(25, '121', '123', '2017-10-31 07:46:15', '2017-10-31 07:46:15'),
+(26, '121', '2q3', '2017-10-31 07:47:18', '2017-10-31 07:59:11'),
+(27, '12', '11', '2017-10-31 07:54:09', '2017-10-31 07:54:09'),
+(28, 'Asdasd', 'asd', '2017-10-31 07:56:56', '2017-10-31 07:56:56'),
+(29, 'asda', 'aa', '2017-10-31 07:58:38', '2017-10-31 07:58:38'),
+(30, 'asda', 'aa', '2017-10-31 07:58:38', '2017-10-31 07:58:38'),
+(31, 'Asd', 'asdf', '2017-10-31 07:58:47', '2017-10-31 07:58:47'),
+(32, 'sfd', 'dsf', '2017-10-31 07:59:05', '2017-10-31 07:59:05'),
+(33, 'Asdasd', 'asdf', '2017-10-31 08:11:38', '2017-10-31 08:11:38');
 
 -- --------------------------------------------------------
 
@@ -309,9 +318,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `employee_id`, `role_id`, `is_active`, `department_id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `photo_id`) VALUES
-(1, '', 1, 1, 1, 'Ralp Jeff  Ortiz', 'rortiz0305@gmail.com', '$2y$10$uaRz/b7MHnSDcFj232q8oeqvpJXvHuq9iCh3vJj7FjsS80QbyMAB2', 'nbVEGCDMoNEHoVGZ3hiTP8TT36RfAvjogyPR5bgllD9t0HZNN6PSGiUxaDzi', '2017-10-09 02:36:09', '2017-10-19 22:09:28', 11),
+(1, '', 1, 1, 1, 'Ralp Jeff  Ortiz', 'rortiz0305@gmail.com', '$2y$10$uaRz/b7MHnSDcFj232q8oeqvpJXvHuq9iCh3vJj7FjsS80QbyMAB2', 'GXh36hvbKkjsY7egqXAfZ64afFmiq0nRrPgi5RhTi69ELjzoAHx85J8UKBaA', '2017-10-09 02:36:09', '2017-10-19 22:09:28', 11),
 (2, '', 1, 0, 1, 'Christine Marie R. Velez', 'christine@yahoo.com', '$2y$10$5dMSNUl1A8y0XMrn9raBO.GnFRigpn1uXUqexypabdGjcDmznCmyy', 'KgMlJiYW9THO4Gq2KGm2yXStgXYbbkGIJ6144BzvCrDr7JuwoPRg83taxcGg', '2017-10-09 07:18:31', '2017-10-21 02:23:03', 5),
-(3, '', 1, 1, 5, 'Human Resources Person', 'hr@human.com', '$2y$10$VvQZFJy1oGGC0QnqVDv/Qed8ova0qNG2Hazp47IHaj9atfTLT41Ai', 'yIS5R8C1bOkc3C4wqf3v900c5Ubqu1vJzWblnzQs5i9grSFFyVWLnIANADlZ', '2017-10-09 19:23:21', '2017-10-19 22:10:12', 19),
+(3, '', 1, 1, 5, 'Human Resources Person', 'hr@human.com', '$2y$10$VvQZFJy1oGGC0QnqVDv/Qed8ova0qNG2Hazp47IHaj9atfTLT41Ai', 'R4RvoaUALKR2fDBhsXcFLCUNxh9bagu923DwKS5AcTDPf95XrdI8U2IrPwWp', '2017-10-09 19:23:21', '2017-10-19 22:10:12', 19),
 (4, '', 1, 1, 2, 'Attorney Legal', 'legal@legal.com', '$2y$10$NQ4ThpJWFEBXveEwUZeEZu1QOq2bGENa0R4BVNopxWf2XFBuE7SsO', '8KeDjxzXTslNT2UXduK4rnaua9vKjAMJHKfIfzlMUWLpQyRdAXQD2QFpfW0l', '2017-10-09 19:25:56', '2017-10-19 22:10:32', 18),
 (5, '', 1, 1, 6, 'Theraphist', 'spa@spa.com', '$2y$10$0orGfCFpak2R.qb3EWr3pulpr6YczVCvUM9uJS4rS2LSKhfxt5vjC', 'miSG9ft8cvs1H92MZxZaLYjmME5BFYvK6HVw7GS8NUvTexsHxxzyhnWolbJc', '2017-10-15 21:49:22', '2017-10-19 22:10:59', 31),
 (6, '', 1, 1, 3, 'Accountant Person', 'accountant@accounts.com', '$2y$10$F3KTTOY78Y3IwWUJc19WS.ri4QTdgDrLcWENuAWcAsPoGu2dXJ0.2', '6iMA3s4TYgTrjZ2E4tB2KpQMzwSbm7meDsLj1bLFm88TwhHBWaVAaOtF1d9B', '2017-10-18 04:44:43', '2017-10-19 22:11:19', 17),
@@ -375,12 +384,6 @@ ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `poslogs`
---
-ALTER TABLE `poslogs`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -427,7 +430,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `users`
 --
