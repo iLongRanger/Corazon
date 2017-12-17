@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2017 at 02:57 PM
+-- Generation Time: Dec 17, 2017 at 07:03 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -138,8 +138,8 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `photo_id`, `lastname`, `firstname`, `middlename`, `street`, `houseno`, `city`, `region`, `brgy`, `zipcode`, `birthdate`, `birthplace`, `marital_id`, `aphone`, `phone`, `hphone`, `email`, `facebook`, `ename`, `relationship`, `eaddress`, `econtact`, `ealcontact`, `employeeid`, `role_id`, `started_date`, `department_id`, `salary`, `created_at`, `updated_at`) VALUES
-(1, 25, 'Ortiz', 'Ralp Jeff', 'Villanueva', 'Mt Elgon', 'B20 L26', 'Quezon City', 'NCR', 'Santa Monica', '1123', '09/05/1994', 'Marikina City', 'Married', '0905-736-3593', '0915-446-6034', '990-55-39', 'rortiz0305@gmail.com', 'facebook.com/ralp.ortiz', 'Christin Marie R Velez', 'Live in Partner', 'Novaliches Quezon City', '0905-736-3593', '0915-446-6034', 2120150391, 2, '10/20/2017', 1, 10000, '2017-10-18 10:57:38', '2017-10-21 07:30:25'),
-(9, 38, 'Ortiz', 'Sasa', 'Villanueva', 'Mt Elgon', 'B20 L26', 'Quezon City', 'NCR', 'Santa Monica', '1123', '09/05/1994', 'Marikina City', '1', '0905-736-3593', '0915-446-6034', '990-55-39', 'rortiz0305@gmail.comasd', 'facebook.com/christine.tintintin', 'Christin Marie R Velez', 'Live in Partnet', 'Novaliches Quezon City', '0905-736-3593', '0915-446-6034', 2120150391, 1, '2017-10-13', 1, 30000, '2017-10-21 06:22:17', '2017-10-21 06:22:17');
+(1, 40, 'Ortiz', 'Ralp Jeff', 'Villanueva', 'Mt Elgon', 'B20 L26', 'Quezon City', 'NCR', 'Santa Monica', '1123', '09/05/1994', 'Marikina City', 'Married', '0905-736-3593', '0915-446-6034', '990-55-39', 'rortiz0305@gmail.com', 'facebook.com/ralp.ortiz', 'Christin Marie R Velez', 'Live in Partner', 'Novaliches Quezon City', '0905-736-3593', '0915-446-6034', 2120150391, 1, '10/20/2017', 1, 10000, '2017-10-18 10:57:38', '2017-12-06 06:11:54'),
+(9, 41, 'Ortiz', 'Sasa', 'Villanueva', 'Mt Elgon', 'B20 L26', 'Quezon City', 'NCR', 'Santa Monica', '1123', '09/05/1994', 'Marikina City', '1', '0905-736-3593', '0915-446-6034', '990-55-39', 'rortiz0305@gmail.comasd', 'facebook.com/christine.tintintin', 'Christin Marie R Velez', 'Live in Partnet', 'Novaliches Quezon City', '0905-736-3593', '0915-446-6034', 2120150391, 1, '2017-10-13', 1, 30000, '2017-10-21 06:22:17', '2017-12-06 06:12:10');
 
 -- --------------------------------------------------------
 
@@ -237,7 +237,88 @@ INSERT INTO `photos` (`id`, `file`, `created_at`, `updated_at`) VALUES
 (36, '1508589410856835_648775645143237_1265331074_o.jpg', '2017-10-21 04:36:50', '2017-10-21 04:36:50'),
 (37, '1508589452856835_648775645143237_1265331074_o.jpg', '2017-10-21 04:37:32', '2017-10-21 04:37:32'),
 (38, '1508595737856835_648775645143237_1265331074_o.jpg', '2017-10-21 06:22:17', '2017-10-21 06:22:17'),
-(39, '15085966111108468-league-of-legends-katarina.jpg', '2017-10-21 06:36:51', '2017-10-21 06:36:51');
+(39, '15085966111108468-league-of-legends-katarina.jpg', '2017-10-21 06:36:51', '2017-10-21 06:36:51'),
+(40, '1512569514856835_648775645143237_1265331074_o.jpg', '2017-12-06 06:11:54', '2017-12-06 06:11:54'),
+(41, '151256953017358705_1377274222293372_4898290067420934867_o.jpg', '2017-12-06 06:12:10', '2017-12-06 06:12:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rj201001`
+--
+
+CREATE TABLE `rj201001` (
+  `id_number` int(11) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `contactNumber` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `birthday` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rj201002`
+--
+
+CREATE TABLE `rj201002` (
+  `fileNo` varchar(15) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `applicationForm` varchar(255) NOT NULL,
+  `resume` varchar(255) NOT NULL,
+  `NBI` varchar(255) DEFAULT NULL,
+  `healthCert` varchar(255) DEFAULT NULL,
+  `brgyClearance` varchar(255) DEFAULT NULL,
+  `birthCert` varchar(255) DEFAULT NULL,
+  `marrigeCert` varchar(255) DEFAULT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rj201003`
+--
+
+CREATE TABLE `rj201003` (
+  `recordNo` varchar(15) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `dateHired` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rj201004`
+--
+
+CREATE TABLE `rj201004` (
+  `fileNo` varchar(15) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `Pagibig` varchar(255) NOT NULL,
+  `Philhealth` varchar(255) NOT NULL,
+  `TIN` varchar(255) NOT NULL,
+  `SSS` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rj201005`
+--
+
+CREATE TABLE `rj201005` (
+  `fileNo` varchar(15) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `NC1` varchar(255) DEFAULT NULL,
+  `NC2` varchar(255) DEFAULT NULL,
+  `DOHLic` varchar(255) DEFAULT NULL,
+  `YellowCard` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -290,7 +371,20 @@ INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VA
 (30, 'asda', 'aa', '2017-10-31 07:58:38', '2017-10-31 07:58:38'),
 (31, 'Asd', 'asdf', '2017-10-31 07:58:47', '2017-10-31 07:58:47'),
 (32, 'sfd', 'dsf', '2017-10-31 07:59:05', '2017-10-31 07:59:05'),
-(33, 'Asdasd', 'asdf', '2017-10-31 08:11:38', '2017-10-31 08:11:38');
+(33, 'Asdasd', 'asdf', '2017-10-31 08:11:38', '2017-10-31 08:11:38'),
+(34, 'Asdasd', 'asdf', '2017-11-07 08:06:58', '2017-11-07 08:06:58'),
+(35, 'fdgs', 'sgfd', '2017-11-07 08:17:52', '2017-11-07 08:17:52'),
+(36, 'asdf', 'sdfa', '2017-11-07 08:18:23', '2017-11-07 08:18:23'),
+(37, 'asdf', 'asdf', '2017-11-07 08:21:58', '2017-11-07 08:21:58'),
+(38, 'asdf', 'asdf', '2017-11-07 08:23:22', '2017-11-07 08:23:22'),
+(39, 'sd', 'asdf', '2017-11-07 08:24:00', '2017-11-07 08:24:00'),
+(40, 'asdsad', 'asd', '2017-11-07 08:24:52', '2017-11-07 08:24:52'),
+(41, 'Asdasd', 'as', '2017-11-07 08:25:55', '2017-11-07 08:25:55'),
+(42, 'asdf', 'asd', '2017-11-07 08:27:29', '2017-11-07 08:27:29'),
+(43, 'cgh', 'Hj', '2017-11-07 08:29:10', '2017-11-07 08:29:10'),
+(44, 'Asdasdas', 'Dasd', '2017-11-07 08:30:11', '2017-11-07 08:30:11'),
+(45, 'Asdasd', 'asdf', '2017-11-07 08:35:20', '2017-11-07 08:35:20'),
+(46, 'asdasd', 'asdf', '2017-11-07 08:38:01', '2017-11-07 08:38:01');
 
 -- --------------------------------------------------------
 
@@ -318,12 +412,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `employee_id`, `role_id`, `is_active`, `department_id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `photo_id`) VALUES
-(1, '', 1, 1, 1, 'Ralp Jeff  Ortiz', 'rortiz0305@gmail.com', '$2y$10$uaRz/b7MHnSDcFj232q8oeqvpJXvHuq9iCh3vJj7FjsS80QbyMAB2', 'GXh36hvbKkjsY7egqXAfZ64afFmiq0nRrPgi5RhTi69ELjzoAHx85J8UKBaA', '2017-10-09 02:36:09', '2017-10-19 22:09:28', 11),
+(1, '', 1, 1, 1, 'Ralp Jeff  Ortiz', 'rortiz0305@gmail.com', '$2y$10$uaRz/b7MHnSDcFj232q8oeqvpJXvHuq9iCh3vJj7FjsS80QbyMAB2', 'fMUN08mMB3KVsfkMgnhElkW6ce62h0AODQJiKHbJwnxgtFkh3pUqQQsrjYJc', '2017-10-09 02:36:09', '2017-10-19 22:09:28', 11),
 (2, '', 1, 0, 1, 'Christine Marie R. Velez', 'christine@yahoo.com', '$2y$10$5dMSNUl1A8y0XMrn9raBO.GnFRigpn1uXUqexypabdGjcDmznCmyy', 'KgMlJiYW9THO4Gq2KGm2yXStgXYbbkGIJ6144BzvCrDr7JuwoPRg83taxcGg', '2017-10-09 07:18:31', '2017-10-21 02:23:03', 5),
-(3, '', 1, 1, 5, 'Human Resources Person', 'hr@human.com', '$2y$10$VvQZFJy1oGGC0QnqVDv/Qed8ova0qNG2Hazp47IHaj9atfTLT41Ai', 'R4RvoaUALKR2fDBhsXcFLCUNxh9bagu923DwKS5AcTDPf95XrdI8U2IrPwWp', '2017-10-09 19:23:21', '2017-10-19 22:10:12', 19),
+(3, '', 1, 1, 5, 'Human Resources Person', 'hr@human.com', '$2y$10$VvQZFJy1oGGC0QnqVDv/Qed8ova0qNG2Hazp47IHaj9atfTLT41Ai', 'OAgMseWnk5YlB4eN8MR8fA6cGPP7SAwkGP9dQWsjeBYiOGRYp3tpCG8ElRaR', '2017-10-09 19:23:21', '2017-10-19 22:10:12', 19),
 (4, '', 1, 1, 2, 'Attorney Legal', 'legal@legal.com', '$2y$10$NQ4ThpJWFEBXveEwUZeEZu1QOq2bGENa0R4BVNopxWf2XFBuE7SsO', '8KeDjxzXTslNT2UXduK4rnaua9vKjAMJHKfIfzlMUWLpQyRdAXQD2QFpfW0l', '2017-10-09 19:25:56', '2017-10-19 22:10:32', 18),
 (5, '', 1, 1, 6, 'Theraphist', 'spa@spa.com', '$2y$10$0orGfCFpak2R.qb3EWr3pulpr6YczVCvUM9uJS4rS2LSKhfxt5vjC', 'miSG9ft8cvs1H92MZxZaLYjmME5BFYvK6HVw7GS8NUvTexsHxxzyhnWolbJc', '2017-10-15 21:49:22', '2017-10-19 22:10:59', 31),
-(6, '', 1, 1, 3, 'Accountant Person', 'accountant@accounts.com', '$2y$10$F3KTTOY78Y3IwWUJc19WS.ri4QTdgDrLcWENuAWcAsPoGu2dXJ0.2', '6iMA3s4TYgTrjZ2E4tB2KpQMzwSbm7meDsLj1bLFm88TwhHBWaVAaOtF1d9B', '2017-10-18 04:44:43', '2017-10-19 22:11:19', 17),
+(6, '', 1, 1, 3, 'Accountant Person', 'accountant@accounts.com', '$2y$10$F3KTTOY78Y3IwWUJc19WS.ri4QTdgDrLcWENuAWcAsPoGu2dXJ0.2', 'S5XzQgNwTn4od4sqtaSDdEpfcC3C8H6rwej52KZyl1UipOiflHNwjR5izNsC', '2017-10-18 04:44:43', '2017-10-19 22:11:19', 17),
 (7, '', 1, 1, 7, 'Auditor Audits', 'auditor@audit.com', '$2y$10$oDeLzkp1w37mHDhdg6F4vu/MJv61gxpqjG70QFtEd2yGKCPmgI3JC', 'agz8kAQBU9EjhLNqRv8VyYmr2ggHVN77vpfnzsmuCXO3I2nzKKCWeuQjM2ZP', '2017-10-18 04:49:26', '2017-10-19 22:11:32', 20),
 (8, '', 1, 1, 8, 'Someone who sells something', 'marketing@market.com', '$2y$10$A0xFUquoOHsX3gblKRGry.wfBJi.RUmj/T3Vdvag.IornrVWTGQ3O', 'Xkmvv5tv0eMWlegsmq776j0SbfcdBWEY2tF9AhuqVRpEPTAtqwnCQXNGlMDQ', '2017-10-18 04:50:49', '2017-10-19 22:11:49', 21),
 (9, '', 1, 1, 4, 'Repair man', 'handyman@handyman.com', '$2y$10$h9hyjU5Xv8EQIQsi.BXr3ewbASKm.fFayehKg0goJVFo2GBeFRUu6', 'etjYEk3fkHPeC1iq4IjxEP9TJJp4pMnwyUxKLOOsrVFZ45rBugUFJpnloy31', '2017-10-18 04:52:40', '2017-10-19 22:12:00', 22),
@@ -384,6 +478,36 @@ ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `rj201001`
+--
+ALTER TABLE `rj201001`
+  ADD PRIMARY KEY (`id_number`);
+
+--
+-- Indexes for table `rj201002`
+--
+ALTER TABLE `rj201002`
+  ADD PRIMARY KEY (`fileNo`);
+
+--
+-- Indexes for table `rj201003`
+--
+ALTER TABLE `rj201003`
+  ADD PRIMARY KEY (`recordNo`);
+
+--
+-- Indexes for table `rj201004`
+--
+ALTER TABLE `rj201004`
+  ADD PRIMARY KEY (`fileNo`);
+
+--
+-- Indexes for table `rj201005`
+--
+ALTER TABLE `rj201005`
+  ADD PRIMARY KEY (`fileNo`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -425,12 +549,12 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT for table `users`
 --

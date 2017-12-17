@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //roles
     Route::get('roles/datatable', 'RoleController@datatable');
+    Route::get('roles/add-edit-remove-column-data', 'RoleController@getAddEditRemoveColumnData');
     Route::resource('roles', 'RoleController');
     Route::get('/roles/edit/{id}', 'RoleController@edit');
     Route::get('/roles/delete/{id}', 'RoleController@destroy');

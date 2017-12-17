@@ -4,6 +4,12 @@
     {{ trans('adminlte_lang::message.home') }}
 @endsection
 
+
+@section('scripts')
+@parent
+<script src="/js/headoffice/role/index.js"></script>
+@endsection
+
 @section('main-content')
 
     @if(Session::has('deleted_role'))
@@ -71,58 +77,5 @@
 
 @endsection
 
-@stack('scripts')
-@push('scripts')
-<script type="text/javascript">
-    $(function() {
-        $('#roles-table').DataTable({
-            processing: true,
-            serverSide: true,
-            search: {
-                caseInsensitive: true
-            },
-
-            ajax: 'http://cims.dev/roles/datatable',
-
-            columns: [
-
-                { data: 'id', name: 'Id' },
-                { data: 'name', name: 'name' },
-                { data: 'description', name: 'description' },
-
-            ]
-        });
-    });
-
-    $(document).ready(function() {
-        var table = $('#roles-table').DataTable();
-
-
-        $('#roles-table tbody').on( 'click', 'tr', function () {
-            if ( $(this).hasClass('selected') ) {
-                $(this).removeClass('selected');
-            }
-            else {
-                table.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-            }
-            var custid = $(this).children(":first").text();
-            var custString = custid.toString();
-
-            // var custidFix = custString.substr(0, custString.indexOf(','));
-
-
-
-            var link;
-            link = 'roles/edit/' + custString;
-            window.location = link;
-
-        } );
-    });
-
-</script>
-
-
-@endpush
 
 

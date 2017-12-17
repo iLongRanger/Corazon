@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\RoleRequest;
 use App\Role;
+use App\User;
 use Yajra\DataTables\Facades\Datatables;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Alert;
 
 
 class RoleController extends Controller
@@ -15,6 +17,24 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function getAddEditRemoveColumn()
+    {
+        return view('datatables.collection.add-edit-remove-column');
+    }
+
+    public function getAddEditRemoveColumnData()
+    {
+        $users = User::select(['id', 'name', 'email', 'password', 'created_at', 'updated_at'])->get();
+
+        return Datatables::of($users)
+            ->addColumn('action', function ($user) {
+                return '&lta href="#edit-'.$user->id.'" class="btn btn-xs btn-primary"&gt&lti class="glyphicon glyphicon-edit"&gt&lt/i&gt Edit&lt/a&gt';
+            })
+            ->editColumn('id', 'ID: @{{$id}}')
+            ->removeColumn('password')
+            ->make(true);
+    }
 
     public function datatable()
     {
@@ -46,7 +66,9 @@ class RoleController extends Controller
     {
         $input = $request->all();
         Role::create($input); // will save everything on database
-        Session::flash('created_role', 'New Role has been created.');
+       // Alert::warning('Good job!');
+        alert()->success('Success Message', 'Optional Title');
+        //Session::flash('created_role', 'New Role has been created.');
         return redirect('/roles');
     }
 

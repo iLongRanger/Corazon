@@ -88,7 +88,7 @@
                 caseInsensitive: false
             },
 
-            ajax: 'http://cims.dev/employees/datatable',
+            ajax: 'http://vifi.dev/employees/datatable',
 
             columns: [
                 { data: 'id', name: 'id' },
@@ -121,8 +121,6 @@
             var custString = custid.toString();
 
             // var custidFix = custString.substr(0, custString.indexOf(','));
-
-
 
             var link;
             link = 'employees/edit/' + custString;

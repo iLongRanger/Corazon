@@ -82,7 +82,7 @@
                 caseInsensitive: true
             },
 
-            ajax: 'http://cims.dev/departments/datatable',
+            ajax: 'http://vifi.dev/departments/datatable',
 
             columns: [
 
