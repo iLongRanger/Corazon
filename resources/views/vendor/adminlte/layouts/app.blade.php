@@ -74,12 +74,12 @@ desired effect
 
 @section('scripts')
     @include('adminlte::layouts.partials.scripts')
-    <script src="/js/datatable.js" type="text/javascript"></script>
+    <script src="/js/datatables.min.js" type="text/javascript"></script>
     <script src="/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
     <script src="/js/sweetalert.min.js" type="text/javascript"></script>
     @include('sweet::alert')
     @stack('scripts')
-    <link href='/css/datatable.css' rel='stylesheet' type='text/css'>
+    <link href='/css/datatables.min.css' rel='stylesheet' type='text/css'>
     <link href='/css/sweetalert.css' rel='stylesheet' type='text/css'>
     
 @show

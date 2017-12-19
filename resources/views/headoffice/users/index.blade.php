@@ -88,7 +88,7 @@
                 },
 
 
-                ajax: 'http://cims.dev/users/datatable',
+                ajax: 'http://vifi.local.com/users/datatable',
 
 
 

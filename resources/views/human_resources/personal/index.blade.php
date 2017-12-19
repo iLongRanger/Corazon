@@ -6,36 +6,37 @@
 
 
 @section('scripts')
-@parent
-<script src="/js/headoffice/role/index.js"></script>
+    @parent
+    <script src="/js/human_resources/personal/index.js"></script>
 @endsection
 
 @section('main-content')
 
-    @if(Session::has('deleted_role'))
 
-        <p class="alert alert-danger">{{session('deleted_role')}}</p>
+    @if(Session::has('deleted_employee'))
+
+        <p class="alert alert-danger">{{session('deleted_employee')}}</p>
     @endif
 
-    @if(Session::has('created_role'))
+    @if(Session::has('created_personal'))
 
-        <p class="alert alert-success">{{session('created_role')}}</p>
+        <p class="alert alert-success">{{session('created_personal')}}</p>
     @endif
 
-    @if(Session::has('updated_role'))
+    @if(Session::has('updated_personal'))
 
-        <p class="alert alert-warning">{{session('updated_role')}}</p>
+        <p class="alert alert-warning">{{session('updated_personal')}}</p>
     @endif
+
+
 
     <div class="container-fluid spark-screen text-black">
-        <div class="row">
-            <!--<div class="col-md-8 col-md-offset-2">-->
 
-            <!-- Default box -->
+        <div class="row">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Roless</h3>
-
+                    <h4 class="text-black">Personal Records</h4>
+                    <p class="small col-md-3"> Click on data to view or make changes.</p>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fa fa-minus"></i></button>
@@ -51,15 +52,14 @@
                                 <div class="box-body">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table id="roles-table" class="table table-striped">
+                                            <table id="personal-table" class="table table-striped table-hover">
                                                 <thead>
                                                 <tr>
-                                                    <th>Role No.</th>
+                                                    <th>Id</th>
+                                                    <th>Identification Number</th>
                                                     <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>created</th>
-                                                    <th>updated</th>
-                                                    <th>Actions</th>
+                                                    <th>Contact Number</th>
+                                                    <th>Email Address</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -79,6 +79,3 @@
     </div>
 
 @endsection
-
-
-

@@ -39,10 +39,10 @@
             </li>
             <li class="header text-center"><span>Human Resources</span></li>
             <li class="treeview">
-                <a href=""><i class="fa fa-user text-purple"></i><span>Employees</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href=""><i class="fa fa-user text-purple"></i><span>Personal Information</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="/employees"><i class="fa fa-users text-blue"></i><span>All Employees</span></a></li>
-                    <li><a href="/employees/create"><i class="fa fa-user-plus text-success"></i><span>New Employee</span></a></li>
+                    <li><a href="/personal"><i class="fa fa-users text-blue"></i><span>All Records</span></a></li>
+                    <li><a href="/personal/create"><i class="fa fa-user-plus text-success"></i><span>New Record</span></a></li>
                 </ul>
 
             </li>

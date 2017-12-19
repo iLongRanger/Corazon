@@ -11,7 +11,7 @@
          xmlns:height="http://www.w3.org/1999/xhtml">
 
         <div class="row">
-	<div class ="box-header">
+	    <div class ="box-header">
             @include('includes.form_error')
             <div class="col-md-3">
                 <!-- Profile Image -->

@@ -18,21 +18,16 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getAddEditRemoveColumn()
-    {
-        return view('datatables.collection.add-edit-remove-column');
-    }
 
     public function getAddEditRemoveColumnData()
     {
-        $users = User::select(['id', 'name', 'email', 'password', 'created_at', 'updated_at'])->get();
+        $roles = Role::select(['id', 'name', 'description',  'created_at', 'updated_at'])->get();
 
-        return Datatables::of($users)
-            ->addColumn('action', function ($user) {
-                return '&lta href="#edit-'.$user->id.'" class="btn btn-xs btn-primary"&gt&lti class="glyphicon glyphicon-edit"&gt&lt/i&gt Edit&lt/a&gt';
+        return Datatables::of($roles)
+            ->addColumn('action', function ($role) {
+                return '<a href="/roles/'.$role->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
             })
-            ->editColumn('id', 'ID: @{{$id}}')
-            ->removeColumn('password')
+           
             ->make(true);
     }
 

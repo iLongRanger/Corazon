@@ -47,6 +47,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/employees/edit/{id}', 'EmployeesController@edit');
     Route::get('/employees/delete/{id}', 'EmployeesController@destroy');
 
+    //Personal Information of employees HR Module
+    Route::get('personal/datatable', 'PersonalController@datatable');
+    Route::resource('personal', 'PersonalController');
+    Route::get('/personal/edit/{id}', 'PersonalController@edit');
+    Route::get('/personal/delete/{id}', 'PersonalController@destroy');
+
+
 });
 
 Route::group(['middleware' => 'admin'], function () {
