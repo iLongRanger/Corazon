@@ -3,7 +3,7 @@ $(function() {
     processing: true,
     serverSide: true,
     search: {
-      caseInsensitive: true
+      caseInsensitive: false
     },
 
     ajax: 'http://vifi.local.com/personal/datatable',

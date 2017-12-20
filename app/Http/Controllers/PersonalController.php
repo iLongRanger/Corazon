@@ -22,7 +22,7 @@ class PersonalController extends Controller
     }
     public function index()
     {
-        $employees = Personal::all();
+        $personal = Personal::all();
         return view('human_resources.personal.index', compact('personal'));
     }
 

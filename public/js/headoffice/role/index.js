@@ -1,4 +1,4 @@
-
+// Note :: Edit button on table not working properly
   $(function() {
     $('#roles-table').DataTable({
       processing: true,

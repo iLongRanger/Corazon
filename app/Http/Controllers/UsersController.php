@@ -45,9 +45,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-       // $names=Employees::select(DB::raw("CONCAT(firstname,' ',middlename, ' ' , lastname) AS name"),'id')->pluck('name', 'id');
-        //$names = Employees::pluck('firstname', 'id')->all();
-        //$employeeid=Employees::pluck('employeeid')->all();
+
         $roles = Role::pluck('name', 'id')->all();
         $departments = Department::pluck('name', 'id')->all();
         return view('headoffice.users.create', compact('roles', 'departments'));

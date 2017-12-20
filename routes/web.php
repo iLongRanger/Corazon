@@ -53,6 +53,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/personal/edit/{id}', 'PersonalController@edit');
     Route::get('/personal/delete/{id}', 'PersonalController@destroy');
 
+    //Pre Employement Information of Employees HR Module
+    Route::get('pre_employment/datatable', 'PreEmploymentController@datatable');
+    Route::resource('pre_employment', 'PreEmploymentController');
+    Route::get('/pre_employment/edit/{id}', 'PreEmploymentController@edit');
+    Route::get('/pre_employment/delete/{id}', 'PreEmploymentController@destroy');
+
+
 
 });
 

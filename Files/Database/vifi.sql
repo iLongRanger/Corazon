@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2017 at 07:03 PM
+-- Generation Time: Dec 20, 2017 at 10:32 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -144,6 +144,39 @@ INSERT INTO `employees` (`id`, `photo_id`, `lastname`, `firstname`, `middlename`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `initials`
+--
+
+CREATE TABLE `initials` (
+  `id` int(11) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `initials`
+--
+
+INSERT INTO `initials` (`id`, `file`, `created_at`, `updated_at`) VALUES
+(12, '1513756621Ralp Jeff Ortiz Application form.pdf', '2017-12-19 23:57:01', '2017-12-19 23:57:01'),
+(13, '1513756621Ortiz Resume.pdf', '2017-12-19 23:57:01', '2017-12-19 23:57:01'),
+(14, '1513756621Ortiz NBI.pdf', '2017-12-19 23:57:01', '2017-12-19 23:57:01'),
+(15, '1513756621Health Cert Ralp Jeff Ortiz.pdf', '2017-12-19 23:57:01', '2017-12-19 23:57:01'),
+(16, '1513756621Ortiz Barangay Clearance.pdf', '2017-12-19 23:57:01', '2017-12-19 23:57:01'),
+(17, '1513756621Ralp Jeff Ortiz Birth Cert.pdf', '2017-12-19 23:57:01', '2017-12-19 23:57:01'),
+(18, '1513756621Ralp Jeff Ortiz Marriage Certificate.pdf', '2017-12-19 23:57:01', '2017-12-19 23:57:01'),
+(19, '1513756735Ralp Jeff Ortiz Application form.pdf', '2017-12-19 23:58:55', '2017-12-19 23:58:55'),
+(20, '1513756735Ortiz Resume.pdf', '2017-12-19 23:58:55', '2017-12-19 23:58:55'),
+(21, '1513756735Ortiz NBI.pdf', '2017-12-19 23:58:55', '2017-12-19 23:58:55'),
+(22, '1513756735Health Cert Ralp Jeff Ortiz.pdf', '2017-12-19 23:58:55', '2017-12-19 23:58:55'),
+(23, '1513756735Ortiz Barangay Clearance.pdf', '2017-12-19 23:58:55', '2017-12-19 23:58:55'),
+(24, '1513756735Ralp Jeff Ortiz Birth Cert.pdf', '2017-12-19 23:58:55', '2017-12-19 23:58:55'),
+(25, '1513756735Ralp Jeff Ortiz Marriage Certificate.pdf', '2017-12-19 23:58:55', '2017-12-19 23:58:55');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -239,7 +272,12 @@ INSERT INTO `photos` (`id`, `file`, `created_at`, `updated_at`) VALUES
 (38, '1508595737856835_648775645143237_1265331074_o.jpg', '2017-10-21 06:22:17', '2017-10-21 06:22:17'),
 (39, '15085966111108468-league-of-legends-katarina.jpg', '2017-10-21 06:36:51', '2017-10-21 06:36:51'),
 (40, '1512569514856835_648775645143237_1265331074_o.jpg', '2017-12-06 06:11:54', '2017-12-06 06:11:54'),
-(41, '151256953017358705_1377274222293372_4898290067420934867_o.jpg', '2017-12-06 06:12:10', '2017-12-06 06:12:10');
+(41, '151256953017358705_1377274222293372_4898290067420934867_o.jpg', '2017-12-06 06:12:10', '2017-12-06 06:12:10'),
+(42, '1513704332856835_648775645143237_1265331074_o.jpg', '2017-12-19 09:25:32', '2017-12-19 09:25:32'),
+(43, '1513704374856835_648775645143237_1265331074_o.jpg', '2017-12-19 09:26:14', '2017-12-19 09:26:14'),
+(44, '151370716415747431_10202888150041896_5435667112254474776_n.jpg', '2017-12-19 10:12:44', '2017-12-19 10:12:44'),
+(45, '151370717616145573_10202974452199396_2018802984_o.jpg', '2017-12-19 10:12:56', '2017-12-19 10:12:56'),
+(46, '151370726517358705_1377274222293372_4898290067420934867_o.jpg', '2017-12-19 10:14:25', '2017-12-19 10:14:25');
 
 -- --------------------------------------------------------
 
@@ -248,13 +286,26 @@ INSERT INTO `photos` (`id`, `file`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `rj201001` (
-  `id_number` int(11) NOT NULL,
+  `id` int(15) NOT NULL,
+  `id_number` varchar(20) NOT NULL,
   `name` varchar(150) NOT NULL,
-  `contactNumber` int(11) NOT NULL,
+  `photo_id` varchar(255) NOT NULL,
+  `contactNumber` varchar(20) NOT NULL,
   `address` varchar(255) NOT NULL,
   `birthday` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rj201001`
+--
+
+INSERT INTO `rj201001` (`id`, `id_number`, `name`, `photo_id`, `contactNumber`, `address`, `birthday`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'ADMIN001', 'Ortiz, Ralp Jeff  Villanueva', '45', '09154466034', 'Novaliches, Quezon City', 'March 5, 1994', 'rortiz03054@gmail.com', '2017-12-19 16:00:00', '2017-12-19 10:13:10'),
+(2, 'sample-001', 'Velez, Christine Marie Roxas', '44', '0915-446-6034', 'Novaliches, Quezon City', '1994-12-05', 'rortiz0305@gmail.com', '2017-12-19 09:26:14', '2017-12-19 10:12:44'),
+(3, 'test-002', 'Sasang Pone Pone', '46', '0915-446-6034', 'Testing address', '2017-12-11', 'rortiz0305@gmail.com', '2017-12-19 10:14:25', '2017-12-19 10:14:33');
 
 -- --------------------------------------------------------
 
@@ -263,17 +314,30 @@ CREATE TABLE `rj201001` (
 --
 
 CREATE TABLE `rj201002` (
-  `fileNo` varchar(15) NOT NULL,
+  `id` int(15) NOT NULL,
+  `fileNo` varchar(20) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `applicationForm` varchar(255) NOT NULL,
-  `resume` varchar(255) NOT NULL,
+  `applicationForm` varchar(255) DEFAULT NULL,
+  `resume` varchar(255) DEFAULT NULL,
   `NBI` varchar(255) DEFAULT NULL,
   `healthCert` varchar(255) DEFAULT NULL,
   `brgyClearance` varchar(255) DEFAULT NULL,
   `birthCert` varchar(255) DEFAULT NULL,
   `marrigeCert` varchar(255) DEFAULT NULL,
-  `status` varchar(50) NOT NULL
+  `status` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rj201002`
+--
+
+INSERT INTO `rj201002` (`id`, `fileNo`, `name`, `applicationForm`, `resume`, `NBI`, `healthCert`, `brgyClearance`, `birthCert`, `marrigeCert`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'PE-001', '1', '4', 'C:\\xampp\\tmp\\phpC9.tmp', 'C:\\xampp\\tmp\\phpCA.tmp', NULL, 'C:\\xampp\\tmp\\phpEB.tmp', 'C:\\xampp\\tmp\\phpEC.tmp', NULL, 'Complete', '2017-12-20 08:46:52', '2017-12-19 23:42:18'),
+(2, 'PE-002', '1', '19', '20', '21', '22', '23', '24', '25', 'Complete', '2017-12-20 08:46:52', '2017-12-19 23:58:55'),
+(3, 'PE-003', '3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Complete', '2017-12-20 01:11:57', '2017-12-20 01:11:57'),
+(4, 'PE-004', 'Sasang Pone Pone', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Incomplete', '2017-12-20 01:29:07', '2017-12-20 01:29:07');
 
 -- --------------------------------------------------------
 
@@ -339,7 +403,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'The Leader', NULL, '2017-10-18 09:05:16'),
+(1, 'Administrator', 'The Leaders', NULL, '2017-12-19 07:35:48'),
 (2, 'Regular', '6  months and counting', NULL, '2017-10-09 19:05:07'),
 (3, 'Provisionary', 'Not Reqgular', '2017-10-09 18:59:39', '2017-10-09 18:59:39'),
 (4, 'Test', 'Testing', '2017-10-09 19:05:22', '2017-10-09 19:05:22'),
@@ -384,7 +448,8 @@ INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VA
 (43, 'cgh', 'Hj', '2017-11-07 08:29:10', '2017-11-07 08:29:10'),
 (44, 'Asdasdas', 'Dasd', '2017-11-07 08:30:11', '2017-11-07 08:30:11'),
 (45, 'Asdasd', 'asdf', '2017-11-07 08:35:20', '2017-11-07 08:35:20'),
-(46, 'asdasd', 'asdf', '2017-11-07 08:38:01', '2017-11-07 08:38:01');
+(46, 'asdasd', 'asdf', '2017-11-07 08:38:01', '2017-11-07 08:38:01'),
+(47, 'test', 'test', '2017-12-17 10:12:44', '2017-12-17 10:12:44');
 
 -- --------------------------------------------------------
 
@@ -412,12 +477,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `employee_id`, `role_id`, `is_active`, `department_id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `photo_id`) VALUES
-(1, '', 1, 1, 1, 'Ralp Jeff  Ortiz', 'rortiz0305@gmail.com', '$2y$10$uaRz/b7MHnSDcFj232q8oeqvpJXvHuq9iCh3vJj7FjsS80QbyMAB2', 'fMUN08mMB3KVsfkMgnhElkW6ce62h0AODQJiKHbJwnxgtFkh3pUqQQsrjYJc', '2017-10-09 02:36:09', '2017-10-19 22:09:28', 11),
+(1, '', 1, 1, 1, 'Ralp Jeff  Ortiz', 'rortiz0305@gmail.com', '$2y$10$uaRz/b7MHnSDcFj232q8oeqvpJXvHuq9iCh3vJj7FjsS80QbyMAB2', 'oFTkwqGp88FdP2EfFo43T6FX7H3kiPXC1b0B1eleAqvL7ri5WNWm8IW92Onr', '2017-10-09 02:36:09', '2017-10-19 22:09:28', 11),
 (2, '', 1, 0, 1, 'Christine Marie R. Velez', 'christine@yahoo.com', '$2y$10$5dMSNUl1A8y0XMrn9raBO.GnFRigpn1uXUqexypabdGjcDmznCmyy', 'KgMlJiYW9THO4Gq2KGm2yXStgXYbbkGIJ6144BzvCrDr7JuwoPRg83taxcGg', '2017-10-09 07:18:31', '2017-10-21 02:23:03', 5),
-(3, '', 1, 1, 5, 'Human Resources Person', 'hr@human.com', '$2y$10$VvQZFJy1oGGC0QnqVDv/Qed8ova0qNG2Hazp47IHaj9atfTLT41Ai', 'OAgMseWnk5YlB4eN8MR8fA6cGPP7SAwkGP9dQWsjeBYiOGRYp3tpCG8ElRaR', '2017-10-09 19:23:21', '2017-10-19 22:10:12', 19),
+(3, '', 1, 1, 5, 'Human Resources Person', 'hr@human.com', '$2y$10$VvQZFJy1oGGC0QnqVDv/Qed8ova0qNG2Hazp47IHaj9atfTLT41Ai', '6b6Il8cnivhjnIkqcvVL278RNZAy1vxKYlW7CHSAGrkVaHOFgW9JRIvAZy82', '2017-10-09 19:23:21', '2017-10-19 22:10:12', 19),
 (4, '', 1, 1, 2, 'Attorney Legal', 'legal@legal.com', '$2y$10$NQ4ThpJWFEBXveEwUZeEZu1QOq2bGENa0R4BVNopxWf2XFBuE7SsO', '8KeDjxzXTslNT2UXduK4rnaua9vKjAMJHKfIfzlMUWLpQyRdAXQD2QFpfW0l', '2017-10-09 19:25:56', '2017-10-19 22:10:32', 18),
 (5, '', 1, 1, 6, 'Theraphist', 'spa@spa.com', '$2y$10$0orGfCFpak2R.qb3EWr3pulpr6YczVCvUM9uJS4rS2LSKhfxt5vjC', 'miSG9ft8cvs1H92MZxZaLYjmME5BFYvK6HVw7GS8NUvTexsHxxzyhnWolbJc', '2017-10-15 21:49:22', '2017-10-19 22:10:59', 31),
-(6, '', 1, 1, 3, 'Accountant Person', 'accountant@accounts.com', '$2y$10$F3KTTOY78Y3IwWUJc19WS.ri4QTdgDrLcWENuAWcAsPoGu2dXJ0.2', 'S5XzQgNwTn4od4sqtaSDdEpfcC3C8H6rwej52KZyl1UipOiflHNwjR5izNsC', '2017-10-18 04:44:43', '2017-10-19 22:11:19', 17),
+(6, '', 1, 1, 3, 'Accountant Person', 'accountant@accounts.com', '$2y$10$F3KTTOY78Y3IwWUJc19WS.ri4QTdgDrLcWENuAWcAsPoGu2dXJ0.2', 'N9vdmO4Efy1mWjSh5Rgm1Rnerk6rCeBs3eBgBleyQROtNdDp3lIgzu6QO9ML', '2017-10-18 04:44:43', '2017-10-19 22:11:19', 17),
 (7, '', 1, 1, 7, 'Auditor Audits', 'auditor@audit.com', '$2y$10$oDeLzkp1w37mHDhdg6F4vu/MJv61gxpqjG70QFtEd2yGKCPmgI3JC', 'agz8kAQBU9EjhLNqRv8VyYmr2ggHVN77vpfnzsmuCXO3I2nzKKCWeuQjM2ZP', '2017-10-18 04:49:26', '2017-10-19 22:11:32', 20),
 (8, '', 1, 1, 8, 'Someone who sells something', 'marketing@market.com', '$2y$10$A0xFUquoOHsX3gblKRGry.wfBJi.RUmj/T3Vdvag.IornrVWTGQ3O', 'Xkmvv5tv0eMWlegsmq776j0SbfcdBWEY2tF9AhuqVRpEPTAtqwnCQXNGlMDQ', '2017-10-18 04:50:49', '2017-10-19 22:11:49', 21),
 (9, '', 1, 1, 4, 'Repair man', 'handyman@handyman.com', '$2y$10$h9hyjU5Xv8EQIQsi.BXr3ewbASKm.fFayehKg0goJVFo2GBeFRUu6', 'etjYEk3fkHPeC1iq4IjxEP9TJJp4pMnwyUxKLOOsrVFZ45rBugUFJpnloy31', '2017-10-18 04:52:40', '2017-10-19 22:12:00', 22),
@@ -459,6 +524,12 @@ ALTER TABLE `employees`
   ADD KEY `employees_department_id_index` (`department_id`);
 
 --
+-- Indexes for table `initials`
+--
+ALTER TABLE `initials`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -481,13 +552,13 @@ ALTER TABLE `photos`
 -- Indexes for table `rj201001`
 --
 ALTER TABLE `rj201001`
-  ADD PRIMARY KEY (`id_number`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `rj201002`
 --
 ALTER TABLE `rj201002`
-  ADD PRIMARY KEY (`fileNo`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `rj201003`
@@ -541,6 +612,11 @@ ALTER TABLE `departments`
 ALTER TABLE `employees`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
+-- AUTO_INCREMENT for table `initials`
+--
+ALTER TABLE `initials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -549,12 +625,22 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+--
+-- AUTO_INCREMENT for table `rj201001`
+--
+ALTER TABLE `rj201001`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `rj201002`
+--
+ALTER TABLE `rj201002`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `users`
 --
