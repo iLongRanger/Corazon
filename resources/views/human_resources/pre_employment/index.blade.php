@@ -12,19 +12,6 @@
 
 @section('main-content')
 
-    @extends('adminlte::layouts.app')
-
-@section('htmlheader_title')
-    {{ trans('adminlte_lang::message.home') }}
-@endsection
-
-
-@section('scripts')
-    @parent
-    <script src="/js/human_resources/personal/index.js"></script>
-@endsection
-
-@section('main-content')
 
 
     @if(Session::has('deleted_employee'))
@@ -64,7 +51,7 @@
                                 <div class="box-body">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table id="pre-table" class="table table-striped table-hover">
+                                            <table id="initials" class="table table-striped table-hover">
                                                 <thead>
                                                 <tr>
                                                     <th>Record Number</th>

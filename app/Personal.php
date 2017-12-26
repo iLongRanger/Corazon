@@ -20,4 +20,8 @@ class Personal extends Model
         return  $this->belongsTo('App\Photo');
     }
 
+    public function pre_employment(){
+        return  $this->belongsTo('App\PreEmployment');
+    }
+
 }

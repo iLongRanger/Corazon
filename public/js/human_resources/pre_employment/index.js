@@ -1,8 +1,5 @@
-/**
- * Created by Popoy on 12/20/2017.
- */
 $(function() {
-  $('#pre-table').DataTable({
+  $('#initials').DataTable({
     processing: true,
     serverSide: true,
     search: {
@@ -13,7 +10,7 @@ $(function() {
 
     columns: [
 
-      { data: 'id', name: 'id' },
+      { data: 'id', name: 'Id' },
       { data: 'fileNo', name: 'fileNo' },
       { data: 'name', name: 'name' },
       { data: 'status', name: 'status'},
@@ -21,15 +18,17 @@ $(function() {
       { data: 'updated_at', name: 'updated_at'},
 
 
+
     ]
   });
 });
 
+
 $(document).ready(function() {
-  var table = $('#pre-table-table').DataTable();
+  var table = $('#initials').DataTable();
 
 
-  $('#pre-table tbody').on( 'click', 'tr', function () {
+  $('#initials tbody').on( 'click', 'tr', function () {
     if ( $(this).hasClass('selected') ) {
       $(this).removeClass('selected');
     }

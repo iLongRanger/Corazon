@@ -40,8 +40,8 @@
                     <div class='row'>
                         <div class='col-md-6'>
                             <div class="form-group">
-                                {!!Form::label('applicationForm', 'Accomplished Application Form')!!}
-                                {!!Form::file('applicationForm',null , ['class'=>'form-control'])!!}
+                                {!!Form::label('applicationForm_id', 'Accomplished Application Form')!!}
+                                {!!Form::file('applicationForm_id',null , ['class'=>'form-control'])!!}
                             </div>
                         </div>
                         <div class='col-md-6'>
@@ -98,6 +98,7 @@
                             <div class='form-group'>
                                 {!!Form::submit('Create Record', ['class'=>'btn btn-primary'])!!}
                             </div>
+
                         </div>
                     </div>
 

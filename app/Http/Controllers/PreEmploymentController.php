@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\InitialRequirements;
+use App\ApplicationForms;
 use Illuminate\Http\Request;
 use App\Personal;
 use App\PreEmployment;
@@ -34,6 +34,7 @@ class PreEmploymentController extends Controller
      */
     public function create()
     {
+
         $personal = Personal::pluck('name', 'name')->all();
         return view('human_resources.pre_employment.create', compact('personal'));
     }
@@ -47,47 +48,11 @@ class PreEmploymentController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        if ($file =$request->file('applicationForm')){
+        if ($file =$request->file('applicationForm_id')){
             $name = time() .$file->getClientOriginalName();
-            $file->move('initial', $name);
-            $photo=InitialRequirements::create(['file'=>$name]);
-            $input['applicationForm'] = $photo->id;
-        }
-        if ($file =$request->file('resume')){
-            $name = time() .$file->getClientOriginalName();
-            $file->move('initial', $name);
-            $photo=InitialRequirements::create(['file'=>$name]);
-            $input['resume'] = $photo->id;
-        }
-        if ($file =$request->file('NBI')){
-            $name = time() .$file->getClientOriginalName();
-            $file->move('initial', $name);
-            $photo=InitialRequirements::create(['file'=>$name]);
-            $input['NBI'] = $photo->id;
-        }
-        if ($file =$request->file('healthCert')){
-            $name = time() .$file->getClientOriginalName();
-            $file->move('initial', $name);
-            $photo=InitialRequirements::create(['file'=>$name]);
-            $input['healthCert'] = $photo->id;
-        }
-        if ($file =$request->file('brgyClearance')){
-            $name = time() .$file->getClientOriginalName();
-            $file->move('initial', $name);
-            $photo=InitialRequirements::create(['file'=>$name]);
-            $input['brgyClearance'] = $photo->id;
-        }
-        if ($file =$request->file('birthCert')){
-            $name = time() .$file->getClientOriginalName();
-            $file->move('initial', $name);
-            $photo=InitialRequirements::create(['file'=>$name]);
-            $input['birthCert'] = $photo->id;
-        }
-        if ($file =$request->file('marrigeCert')){
-            $name = time() .$file->getClientOriginalName();
-            $file->move('initial', $name);
-            $photo=InitialRequirements::create(['file'=>$name]);
-            $input['marrigeCert'] = $photo->id;
+            $file->move('applicationForms', $name);
+            $application=ApplicationForms::create(['file'=>$name]);
+            $input['applicationForm_id'] = $application->id;
         }
         PreEmployment::create($input); // will save everything on database
         Session::flash('created', 'New record has been created.');
@@ -113,7 +78,8 @@ class PreEmploymentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pre_employment = PreEmployment::findorFail($id); // to edit the selected user
+        return view ('human_resources.pre_employment.edit', compact('pre_employment' ));
     }
 
     /**
