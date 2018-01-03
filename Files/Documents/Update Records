@@ -1,7 +1,16 @@
 Update definitions
 
 cmv001 - fixed pre employment index bug [ Dec 22, 2017 : 02:12:AM ]
-cmv002 - working Personal Information module with create view and update
-       - working with Pre employment Records
-       - Relationship for preEmployment and ApplicationForms are working
-       - PreEmployment index and create working
+cmv002 - Personal Information Module 
+            - index 
+            - create 
+            - edit 
+            - update 
+        - PreEmployment Module
+            - index 
+            - create 
+            - edit
+            - update
+       - UPGRADED LARAVEL FRAMWORK TO LATEST VERSION [5.5]
+       - ADDED WHOOPS FOR DEBUGGING PURPOSES
+       

@@ -19,14 +19,14 @@
         <p class="alert alert-danger">{{session('deleted_employee')}}</p>
     @endif
 
-    @if(Session::has('created_personal'))
+    @if(Session::has('created'))
 
-        <p class="alert alert-success">{{session('created_personal')}}</p>
+        <p class="alert alert-success">{{session('created')}}</p>
     @endif
 
-    @if(Session::has('updated_personal'))
+    @if(Session::has('updated'))
 
-        <p class="alert alert-warning">{{session('updated_personal')}}</p>
+        <p class="alert alert-warning">{{session('updated')}}</p>
     @endif
 
     <div class="container-fluid spark-screen text-black">

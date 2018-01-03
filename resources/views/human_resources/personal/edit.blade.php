@@ -59,7 +59,7 @@
                             <div class = 'col-lg-3'>
                                 <div class="form-group col-md-4">
                                     {!!Form::label('photo_id', 'Photo')!!}
-                                    {!!Form::file('photo_id',null , ['class'=>'form-control'])!!}
+                                    {!!Form::file('photo_id',null , ['class'=>'form-control', 'placeholder'=>'upload a new one'])!!}
                                 </div>
                             </div>
                         </div>

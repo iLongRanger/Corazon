@@ -46,44 +46,44 @@
                         </div>
                         <div class='col-md-6'>
                             <div class="form-group">
-                                {!!Form::label('resume', 'Resume')!!}
-                                {!!Form::file('resume',null , ['class'=>'form-control'])!!}
+                                {!!Form::label('resume_id', 'Resume')!!}
+                                {!!Form::file('resume_id',null , ['class'=>'form-control'])!!}
                             </div>
                         </div>
                     </div>
                     <div class='row'>
                         <div class='col-md-6'>
                             <div class="form-group">
-                                {!!Form::label('NBI', 'NBI Clearance')!!}
-                                {!!Form::file('NBI',null , ['class'=>'form-control'])!!}
+                                {!!Form::label('NBI_id', 'NBI Clearance')!!}
+                                {!!Form::file('NBI_id',null , ['class'=>'form-control'])!!}
                             </div>
                         </div>
                         <div class='col-md-6'>
                             <div class="form-group">
-                                {!!Form::label('healthCert', 'Health Certificate')!!}
-                                {!!Form::file('healthCert',null , ['class'=>'form-control'])!!}
-                            </div>
-                        </div>
-                    </div>
-                    <div class='row'>
-                        <div class='col-md-6'>
-                            <div class="form-group">
-                                {!!Form::label('brgyClearance', 'Barangay Clearance')!!}
-                                {!!Form::file('brgyClearance',null , ['class'=>'form-control'])!!}
-                            </div>
-                        </div>
-                        <div class='col-md-6'>
-                            <div class="form-group">
-                                {!!Form::label('birthCert', 'Birth Certificate')!!}
-                                {!!Form::file('birthCert',null , ['class'=>'form-control'])!!}
+                                {!!Form::label('healthCert_id', 'Health Certificate')!!}
+                                {!!Form::file('healthCert_id',null , ['class'=>'form-control'])!!}
                             </div>
                         </div>
                     </div>
                     <div class='row'>
                         <div class='col-md-6'>
                             <div class="form-group">
-                                {!!Form::label('marrigeCert', 'Marriage Certificate')!!}
-                                {!!Form::file('marrigeCert',null , ['class'=>'form-control'])!!}
+                                {!!Form::label('brgyClearance_id', 'Barangay Clearance')!!}
+                                {!!Form::file('brgyClearance_id',null , ['class'=>'form-control'])!!}
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <div class="form-group">
+                                {!!Form::label('birthCert_id', 'Birth Certificate')!!}
+                                {!!Form::file('birthCert_id',null , ['class'=>'form-control'])!!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <div class="form-group">
+                                {!!Form::label('marriageCert_id', 'Marriage Certificate')!!}
+                                {!!Form::file('marriageCert_id',null , ['class'=>'form-control'])!!}
                             </div>
                         </div>
                         <div class='col-md-6'>
@@ -96,7 +96,7 @@
                     <div class='row'>
                         <div class = 'col-md-1'>
                             <div class='form-group'>
-                                {!!Form::submit('Create Record', ['class'=>'btn btn-primary'])!!}
+                                {!!Form::submit('Create Record', ['class'=>'btn btn-success'])!!}
                             </div>
 
                         </div>

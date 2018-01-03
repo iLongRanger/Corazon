@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\ApplicationForms;
+use App\Health;
+use App\Http\Requests\PreEmploymentRequest;
+use App\Nbi;
+use App\Birth;
+use App\Barangay;
+use App\Marriage;
+use App\Resumes;
 use Illuminate\Http\Request;
 use App\Personal;
 use App\PreEmployment;
@@ -45,7 +52,7 @@ class PreEmploymentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PreEmploymentRequest $request)
     {
         $input = $request->all();
         if ($file =$request->file('applicationForm_id')){
@@ -53,6 +60,42 @@ class PreEmploymentController extends Controller
             $file->move('applicationForms', $name);
             $application=ApplicationForms::create(['file'=>$name]);
             $input['applicationForm_id'] = $application->id;
+        }
+        if ($file =$request->file('resume_id')){
+            $name = time() .$file->getClientOriginalName();
+            $file->move('resumes', $name);
+            $application=Resumes::create(['file'=>$name]);
+            $input['resume_id'] = $application->id;
+        }
+        if ($file =$request->file('NBI_id')){
+            $name = time() .$file->getClientOriginalName();
+            $file->move('nbi', $name);
+            $application=Nbi::create(['file'=>$name]);
+            $input['NBI_id'] = $application->id;
+        }
+        if ($file =$request->file('healthCert_id')){
+            $name = time() .$file->getClientOriginalName();
+            $file->move('health', $name);
+            $application=Health::create(['file'=>$name]);
+            $input['healthCert_id'] = $application->id;
+        }
+        if ($file =$request->file('brgyClearance_id')){
+            $name = time() .$file->getClientOriginalName();
+            $file->move('brgy', $name);
+            $application=Barangay::create(['file'=>$name]);
+            $input['brgyClearance_id'] = $application->id;
+        }
+        if ($file =$request->file('birthCert_id')){
+            $name = time() .$file->getClientOriginalName();
+            $file->move('birth', $name);
+            $application=Birth::create(['file'=>$name]);
+            $input['birthCert_id'] = $application->id;
+        }
+        if ($file =$request->file('marriageCert_id')){
+            $name = time() .$file->getClientOriginalName();
+            $file->move('marriage', $name);
+            $application=Marriage::create(['file'=>$name]);
+            $input['marriageCert_id'] = $application->id;
         }
         PreEmployment::create($input); // will save everything on database
         Session::flash('created', 'New record has been created.');
@@ -91,7 +134,56 @@ class PreEmploymentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pre_employment= PreEmployment::findOrFail($id);
+        $input = $request->all();
+        if($file = $request->file('applicationForm_id')){
+            $name = time(). $file->getClientOriginalName();
+            $file->move('applicationForms' , $name);
+            $photo= ApplicationForms::create(['file'=>$name]);
+            $input['applicationForm_id'] = $photo->id;
+        }
+        if($file = $request->file('resume_id')){
+            $name = time(). $file->getClientOriginalName();
+            $file->move('resumes' , $name);
+            $photo= Resumes::create(['file'=>$name]);
+            $input['resume_id'] = $photo->id;
+        }
+        if($file = $request->file('NBI_id')){
+            $name = time(). $file->getClientOriginalName();
+            $file->move('nbi' , $name);
+            $photo= Nbi::create(['file'=>$name]);
+            $input['NBI_id'] = $photo->id;
+        }
+        if($file = $request->file('healthCert_id')){
+            $name = time(). $file->getClientOriginalName();
+            $file->move('health' , $name);
+            $photo= Health::create(['file'=>$name]);
+            $input['healthCert_id'] = $photo->id;
+        }
+        if($file = $request->file('brgyClearance_id')){
+            $name = time(). $file->getClientOriginalName();
+            $file->move('brgy' , $name);
+            $photo= Barangay::create(['file'=>$name]);
+            $input['brgyClearance_id'] = $photo->id;
+        }
+        if($file = $request->file('birthCert_id')){
+            $name = time(). $file->getClientOriginalName();
+            $file->move('birth' , $name);
+            $photo= Birth::create(['file'=>$name]);
+            $input['birthCert_id'] = $photo->id;
+        }
+        if($file = $request->file('marriageCert_id')){
+            $name = time(). $file->getClientOriginalName();
+            $file->move('marriage' , $name);
+            $photo= Marriage::create(['file'=>$name]);
+            $input['marriageCert_id'] = $photo->id;
+        }
+        $pre_employment->Update($input); //will update the data on database
+        Session::flash('updated', 'Record has been Updated');
+        return redirect('/pre_employment');
+
+
+
     }
 
     /**
