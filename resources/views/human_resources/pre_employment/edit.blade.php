@@ -49,8 +49,9 @@
                                         <tr>
                                             <td>Application Form</td>
                                             <td>
-                                                <a href=" {{$pre_employment->application ? $pre_employment->application->file:'errors/404'}}">{{$pre_employment->name}}'s Application form</a><br/>
+                                                <a href="{{$pre_employment->application ? $pre_employment->application->file:'No file'}}">{{$pre_employment->application ? $pre_employment->application->file:'No file'}}</a><br/>
                                             </td>
+
                                             <td>
                                                 <div class="form-group">
                                                     {!!Form::label('applicationForm_id', 'Upload an Application form')!!}
@@ -61,7 +62,7 @@
                                         <tr>
                                             <td>Resume</td>
                                             <td>
-                                                <a href="{{$pre_employment->resume ? $pre_employment->resume->file:'errors/404'}}">{{$pre_employment->name}}'s Resume</a><br/>
+                                                <a href="{{$pre_employment->resume ? $pre_employment->resume->file:'No File'}}">{{$pre_employment->resume ? $pre_employment->resume->file:'No File'}}</a><br/>
                                             </td>
                                             <td>
                                                 <div class="form-group">
@@ -73,7 +74,7 @@
                                         <tr>
                                             <td>NBI Clearance</td>
                                             <td>
-                                                <a href="{{$pre_employment->nbi ? $pre_employment->nbi->file:'errors/404'}}">{{$pre_employment->name}}'s NBI Clearance</a><br/>
+                                                <a href="{{$pre_employment->nbi ? $pre_employment->nbi->file:'No file'}}">{{$pre_employment->nbi ? $pre_employment->nbi->file:'No file'}}</a><br/>
                                             </td>
                                             <td>
                                                 <div class="form-group">
@@ -85,7 +86,7 @@
                                         <tr>
                                             <td>Health Certificate</td>
                                             <td>
-                                                <a href="{{$pre_employment->health ? $pre_employment->health->file:'errors/404'}}">{{$pre_employment->name}}'s Health Certificate</a><br/>
+                                                <a href="{{$pre_employment->health ? $pre_employment->health->file:'No file'}}">{{$pre_employment->health ? $pre_employment->health->file:'No file'}}</a><br/>
                                             </td>
                                             <td>
                                                 <div class="form-group">
@@ -97,7 +98,7 @@
                                         <tr>
                                             <td>Barangay Clearance</td>
                                             <td>
-                                                <a href="{{$pre_employment->brgy ? $pre_employment->brgy->file:'errors/404'}}">{{$pre_employment->name}}'s Barangay Clearance</a><br/>
+                                                <a href="{{$pre_employment->brgy ? $pre_employment->brgy->file:'No file'}}">{{$pre_employment->brgy ? $pre_employment->brgy->file:'No file'}}</a><br/>
                                             </td>
                                             <td>
                                                 <div class="form-group">
@@ -109,7 +110,7 @@
                                         <tr>
                                             <td>Birth Certificate</td>
                                             <td>
-                                                <a href="{{$pre_employment->birth ? $pre_employment->birth->file:'errors/404'}}">{{$pre_employment->name}}'s Birth Certificate</a><br/>
+                                                <a href="{{$pre_employment->birth ? $pre_employment->birth->file:'No file'}}">{{$pre_employment->birth ? $pre_employment->birth->file:'No file'}}</a><br/>
                                             </td>
                                             <td>
                                                 <div class="form-group">
@@ -121,7 +122,7 @@
                                         <tr>
                                             <td>Marriage Certificate</td>
                                             <td>
-                                                <a href="{{$pre_employment->marriage ? $pre_employment->marriage->file:'errors/404'}}">{{$pre_employment->name}}'s Marriage Certificate</a><br/>
+                                                <a href="{{$pre_employment->marriage ? $pre_employment->marriage->file:'No file'}}">{{$pre_employment->marriage ? $pre_employment->marriage->file:'No file'}}</a><br/>
                                             </td>
                                             <td>
                                                 <div class="form-group">
