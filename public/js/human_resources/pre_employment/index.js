@@ -1,5 +1,6 @@
 $(function() {
   $('#initials').DataTable({
+
     processing: true,
     serverSide: true,
     search: {
@@ -8,9 +9,10 @@ $(function() {
 
     ajax: 'http://vifi.local.com/pre_employment/datatable',
 
+
     columns: [
 
-      { data: 'id', name: 'Id' },
+      { data: 'id', name: 'Id'},
       { data: 'fileNo', name: 'fileNo' },
       { data: 'name', name: 'name' },
       { data: 'status', name: 'status'},

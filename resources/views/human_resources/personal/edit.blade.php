@@ -93,7 +93,7 @@
                         </div>
                         <div class="row pull-right">
                             <div class = "form-group col-md-3">
-                                {!!Form::submit('Update Record', ['class'=>'btn btn-primary'])!!}
+                                {!!Form::submit('Update Record', ['class'=>'btn btn-warning'])!!}
                             </div>
 
                             {!! Form::close() !!}

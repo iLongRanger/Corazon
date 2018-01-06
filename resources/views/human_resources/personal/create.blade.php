@@ -32,8 +32,8 @@
                     <div class = 'row'>
                         <div class = 'col-lg-4'>
                             <div class="form-group">
-                                {!!Form::label('id_number', 'Identification Number:')!!}
-                                {!!Form::text('id_number', null, ['class'=>'form-control','placeholder'=>'DepartmentCode-Year-RecordNumber'])!!}
+                                {!!Form::label('id_number', 'Application Number:')!!}
+                                {!!Form::text('id_number', null, ['class'=>'form-control','placeholder'=>'Application Number'])!!}
                             </div>
                         </div>
                         <div class = 'col-lg-4'>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class = "form-group pull-right">
-                        {!!Form::submit('Create New Record', ['class'=>'btn btn-primary'])!!}
+                        {!!Form::submit('Create New Record', ['class'=>'btn btn-success'])!!}
                     </div>
 
                     {!! Form::close() !!}

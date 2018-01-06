@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PreEmploymentRequest extends FormRequest
+class PreEmploymentRequestUpdate extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,13 @@ class PreEmploymentRequest extends FormRequest
     public function rules()
     {
         return [
-            'fileNo' => 'required',
-            'name' => 'required', 
             'status' => 'required',
         ];
     }
-    public function attributes() 
+    public function attributes()
     {
         return[
-        'fileNo' => 'File Number',
-        'name' => 'Applicant name',
-        'status' => 'Status',
+            'status' => 'Status field',
         ];
     }
 }

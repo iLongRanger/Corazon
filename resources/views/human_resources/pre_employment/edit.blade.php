@@ -6,43 +6,90 @@
 
 @section('main-content')
 
-    <div class="container-fluid spark-screen text-black ">
-        <div class="row">
-            <!-- Default box -->
-       
-            <div class ='col-md-12'>
-                <div class="box  box-info">
-                        
-                        @include('includes.form_error')
-                        {!! Form::model($pre_employment, ['method'=>'PATCH', 'action'=>['PreEmploymentController@update', $pre_employment->id], 'files'=> true])!!}
-                        <div class="box-body">
-                                <div class = 'row'>
-                                        <div class = 'col-md-6'>
-                                            <h4> 
-                                                Pre employment files of {{$pre_employment->name}} 
-                                            </h4>
-                                            <h4> 
-                                                File Status: {{$pre_employment->status}} 
-                                            </h4>
-                                        </div>
-                                        <div class = 'col-md-6'>
-                                                <h4> 
-                                                    Recieved Date: {{$pre_employment->created_at->diffForHumans()}} 
-                                                </h4>
-                                                <h4> 
-                                                    Last Changes Made: {{$pre_employment->updated_at->diffForHumans()}} 
-                                                </h4>
-                                        </div>
-                                    </div>
-                            <div class = 'row'>
-                                <div class = 'col-md-12'>
+
+
+                <div class="box box-info">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class ='col-md-12'>
+                                <div class="col-md-12">
+                                    @include('includes.form_error')
+                                </div>
+                                <table class="table table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>
+                                            <span class ='fa fa-file'>
+                                                File Number
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <span class = "fa fa-user">
+                                                Applicant's Name
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <span class='fa  fa-calendar-check-o'>
+                                            Recieved Date
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <span class ='fa fa-calendar-plus-o'>
+                                                Last Update
+                                            </span>
+                                        </th>
+                                        <th>
+                                            <span class="fa fa-bookmark">
+                                                Status
+                                            </span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{$pre_employment->fileNo}}</td>
+                                        <td>{{$pre_employment->name}}</td>
+                                        <td>{{$pre_employment->created_at->diffForHumans()}}</td>
+                                        <td>{{$pre_employment->updated_at->diffForHumans()}}</td>
+                                        <td>
+                                            @if($pre_employment->status == 'Complete')
+                                                <span class="label label-success">{{$pre_employment->status}}</span>
+                                            @else
+                                                <span class="label label-danger">{{$pre_employment->status}}</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box box-info">
+                    {!! Form::model($pre_employment, ['method'=>'PATCH', 'action'=>['PreEmploymentController@update', $pre_employment->id], 'files'=> true])!!}
+                    <div class="box-body">
+                        <div class = 'row'>
+                            <div class = 'col-md-12'>
                                     
-                                    <table class="table table-hover table-responsive">
-                                        <thead>
+                                <table class="table table-hover table-responsive">
+                                    <thead>
                                         <tr>
-                                            <th>File Type</th>
-                                            <th>Download file</th>
-                                            <th>Update</th>
+                                            <th>
+                                                <span class="fa fa-file-archive-o">
+                                                    File Type
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="fa fa-download">
+                                                    Download file
+                                                </span>
+                                            </th>
+                                            <th>
+                                                <span class="fa fa-upload">
+                                                    Update
+                                                </span>
+                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -133,23 +180,22 @@
                                         </tr>
                                         </tbody>
                                     </table>
-                                    <div class='col-md-6'>
-                                        <div class="form-group">
-                                            {!!Form::label('status', 'File Status')!!}
-                                            {!!Form::select('status', [''=>'Choose Status'] +array('Complete' => 'Complete', 'Incomplete' => 'Incomplete'), '' ,  ['class'=>'form-control'])!!}
-                                        </div>
-                                        <div class = "form-group">
-                                            {!!Form::submit('Update Record', ['class'=>'btn btn-warning'])!!}
-                                        </div>
+                                <div class='col-md-6'>
+                                    <div class="form-group">
+                                        {!!Form::label('status', 'Please update record status')!!}
+                                        {!!Form::select('status', [''=>'Choose Status'] +array('Complete' => 'Complete', 'Incomplete' => 'Incomplete'), '' ,  ['class'=>'form-control'])!!}
                                     </div>
-                                    {!! Form::close() !!}
+                                    <div class = "form-group">
+                                        {!!Form::submit('Update Record', ['class'=>'btn btn-warning'])!!}
+                                    </div>
+                                </div>
+                                {!! Form::close() !!}
+
                                 </div>
                             </div>
                         </div>
-                </div>
-            </div>
+                     </div>
 
-        </div>
-    </div>
+
 
 @endsection

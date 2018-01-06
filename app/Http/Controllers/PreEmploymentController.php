@@ -10,11 +10,12 @@ use App\Birth;
 use App\Barangay;
 use App\Marriage;
 use App\Resumes;
-use Illuminate\Http\Request;
+use App\Http\Requests\PreEmploymentRequestUpdate;
 use App\Personal;
 use App\PreEmployment;
 use Yajra\DataTables\Facades\Datatables;
 use Illuminate\Support\Facades\Session;
+
 
 class PreEmploymentController extends Controller
 {
@@ -121,8 +122,9 @@ class PreEmploymentController extends Controller
      */
     public function edit($id)
     {
-        $pre_employment = PreEmployment::findorFail($id); // to edit the selected user
-        return view ('human_resources.pre_employment.edit', compact('pre_employment' ));
+        $pre_employment = PreEmployment::findorFail($id);
+        $personal = Personal::all();
+        return view ('human_resources.pre_employment.edit', compact('pre_employment', 'personal' ));
     }
 
     /**
@@ -132,7 +134,7 @@ class PreEmploymentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PreEmploymentRequestUpdate $request, $id)
     {
         $pre_employment= PreEmployment::findOrFail($id);
         $input = $request->all();
@@ -180,6 +182,7 @@ class PreEmploymentController extends Controller
         }
         $pre_employment->Update($input); //will update the data on database
         Session::flash('updated', 'Record has been Updated');
+
         return redirect('/pre_employment');
 
 
