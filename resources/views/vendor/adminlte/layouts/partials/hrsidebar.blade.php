@@ -56,6 +56,15 @@
 
             </li>
 
+            <li class="treeview">
+                <a href=""><i class="fa fa-black-tie text-purple"></i><span>Employment Records</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/employment"><i class="fa fa-database text-blue"></i><span>All Records</span></a></li>
+                    <li><a href="/employment/create"><i class="fa fa-plus text-success"></i><span>New Record</span></a></li>
+                </ul>
+
+            </li>
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

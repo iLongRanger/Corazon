@@ -183,7 +183,7 @@
                                 <div class='col-md-6'>
                                     <div class="form-group">
                                         {!!Form::label('status', 'Please update record status')!!}
-                                        {!!Form::select('status', [''=>'Choose Status'] +array('Complete' => 'Complete', 'Incomplete' => 'Incomplete'), '' ,  ['class'=>'form-control'])!!}
+                                        {!!Form::select('status', [''=>'Choose Status'] +array('1' => 'Complete', '2' => 'Incomplete'), '' ,  ['class'=>'form-control'])!!}
                                     </div>
                                     <div class = "form-group">
                                         {!!Form::submit('Update Record', ['class'=>'btn btn-warning'])!!}

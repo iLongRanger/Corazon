@@ -1,36 +1,32 @@
+/**
+ * Created by Popoy on 1/8/2018.
+ */
 $(function() {
-  $('#initials').DataTable({
-
+  $('#employment').DataTable({
     processing: true,
     serverSide: true,
     search: {
       caseInsensitive: false
     },
 
-    ajax: 'http://vifi.local.com/pre_employment/datatable',
-
+    ajax: 'http://vifi.local.com/employment/datatable',
 
     columns: [
 
-      { data: 'id', name: 'Id'},
-      { data: 'fileNo', name: 'fileNo' },
+      { data: 'id', name: 'id' },
       { data: 'name', name: 'name' },
-      { data: 'status', name: 'status'},
-      { data: 'created_at', name: 'created_at'},
-      { data: 'updated_at', name: 'updated_at'},
-
-
+      { data: 'department_id', name: 'department_id' },
+      { data: 'role_id', name: 'role_id'},
 
     ]
   });
 });
 
-
 $(document).ready(function() {
-  var table = $('#initials').DataTable();
+  var table = $('#employent').DataTable();
 
 
-  $('#initials tbody').on( 'click', 'tr', function () {
+  $('#employment tbody').on( 'click', 'tr', function () {
     if ( $(this).hasClass('selected') ) {
       $(this).removeClass('selected');
     }
@@ -44,15 +40,10 @@ $(document).ready(function() {
 
 
     var link;
-    link = 'pre_employment/edit/' + custString;
+    link = 'employment/edit/' + custString;
     window.location = link;
 
   } );
-});
-
-
-
-
-/**
+});/**
  * Created by Popoy on 12/19/2017.
  */

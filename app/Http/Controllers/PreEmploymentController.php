@@ -42,9 +42,9 @@ class PreEmploymentController extends Controller
      */
     public function create()
     {
-
+        $pre_employment = PreEmployment::all();
         $personal = Personal::pluck('name', 'name')->all();
-        return view('human_resources.pre_employment.create', compact('personal'));
+        return view('human_resources.pre_employment.create', compact('personal', 'pre_employment'));
     }
 
     /**

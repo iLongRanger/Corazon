@@ -89,7 +89,7 @@
                         <div class='col-md-6'>
                             <div class="form-group">
                                 {!!Form::label('status', 'Record Status')!!}
-                                {!!Form::select('status', [''=>'Choose Status'] +array('Complete' => 'Complete', 'Incomplete' => 'Incomplete'), '' ,  ['class'=>'form-control'])!!}
+                                {!!Form::select('status', [''=>'Choose Status'] +array('1' => 'Complete', '2' => 'Incomplete'), '' ,  ['class'=>'form-control'])!!}
                             </div>
                         </div>
                     </div>
