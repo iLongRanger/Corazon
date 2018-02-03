@@ -51,5 +51,11 @@ class User extends Authenticatable
         return false;
     }
 
+    public function isHuman(){
+        if($this->department->name == "Human Resources"){
+            return true;
+        }
+    }
+
 
 }

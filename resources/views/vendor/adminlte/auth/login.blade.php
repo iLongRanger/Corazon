@@ -24,7 +24,7 @@
         <div class="login-box-body">
             <div class="login-logo">
                  <img src="img/icons/main.png" class="img-circle img-responsive" alt="Main Icon" />
-                <a href="{{ url('/home') }}"></h3></a>
+                <a href="{{ url('/home') }}"></a>
             </div><!-- /.login-logo -->
         <p class="login-box-msg"> {{ trans('adminlte_lang::message.siginsession') }} </p>
 

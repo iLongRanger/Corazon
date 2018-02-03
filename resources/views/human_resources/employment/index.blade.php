@@ -35,7 +35,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h4 class="text-black">Employment Records</h4>
-                    <p class="small col-md-3"> Click on data to view or make changes.</p>
+
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fa fa-minus"></i></button>
@@ -58,6 +58,7 @@
                                                     <th>Employee Name</th>
                                                     <th>Department</th>
                                                     <th>Position</th>
+                                                    <th>Actions</th>
                                                 </tr>
 
                                                 </thead>

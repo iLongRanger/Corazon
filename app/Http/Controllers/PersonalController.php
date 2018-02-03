@@ -16,9 +16,16 @@ class PersonalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function datatable()
+    public function getAddEditRemoveColumnData()
     {
-        return Datatables::of(Personal::query())->make(true);
+        $personals = Personal::select(['id', 'id_number', 'name',  'contactNumber', 'email'])->get();
+
+        return Datatables::of($personals)
+            ->addColumn('action', function ($personal) {
+                return '<a href="/personal/edit/'.$personal->id.'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+
+            })
+            ->make(true);
     }
     public function index()
     {

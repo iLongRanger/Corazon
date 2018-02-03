@@ -6,43 +6,20 @@ $(function() {
       caseInsensitive: false
     },
 
-    ajax: 'http://vifi.local.com/personal/datatable',
+    ajax: '/personal/add-edit-remove-column-data',
 
     columns: [
 
-      { data: 'id', name: 'Id' },
+      { data: 'id', name: 'id' },
       { data: 'id_number', name: 'id_number' },
       { data: 'name', name: 'name' },
       { data: 'contactNumber', name: 'contactNumber'},
       { data: 'email', name: 'email'},
-
+      {data: 'action', name: 'action', orderable: false, searchable: false},
 
     ]
   });
 });
-
-$(document).ready(function() {
-  var table = $('#personal-table').DataTable();
-
-
-  $('#personal-table tbody').on( 'click', 'tr', function () {
-    if ( $(this).hasClass('selected') ) {
-      $(this).removeClass('selected');
-    }
-    else {
-      table.$('tr.selected').removeClass('selected');
-      $(this).addClass('selected');
-    }
-    var custid = $(this).children(":first").text();
-    var custString = custid.toString();
-
-
-
-    var link;
-    link = 'personal/edit/' + custString;
-    window.location = link;
-
-  } );
-});/**
+/**
  * Created by Popoy on 12/19/2017.
  */

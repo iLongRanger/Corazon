@@ -1,5 +1,7 @@
 Update definitions
 
+AS OF DECEMBER 22, 2017 SYSTEM VERSION IS 0.0.0
+
 cmv001 - fixed pre employment index bug [ Dec 22, 2017 : 02:12:AM ]
 cmv002 - Personal Information Module 
             - index 
@@ -19,3 +21,15 @@ cmv003 - Employment Module
             - create
             - edit
             - update
+cmv004 - created security for HR modules
+            - ONLY USERS WITH HR DEPARTMENT WILL BE ABLE TO ACCESS HR MODULE
+            - REMOVED RJ0004 ON ERD
+cmv005 - HR page Maintenance Module
+            - Department
+                - create
+                - update
+                - view
+                - index
+cmv006 - Major Changes Made
+            - Added Action Column on indexes of existing modules in HR
+

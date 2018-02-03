@@ -7,50 +7,22 @@ $(function() {
       caseInsensitive: false
     },
 
-    ajax: 'http://vifi.local.com/pre_employment/datatable',
+    ajax: '/pre_employment/add-edit-remove-column-data',
 
 
     columns: [
 
-      { data: 'id', name: 'Id'},
+      { data: 'id', name: 'id'},
       { data: 'fileNo', name: 'fileNo' },
       { data: 'name', name: 'name' },
-      { data: 'status', name: 'status'},
       { data: 'created_at', name: 'created_at'},
       { data: 'updated_at', name: 'updated_at'},
-
+      {data: 'action', name: 'action', orderable: false, searchable: false},
 
 
     ]
   });
 });
-
-
-$(document).ready(function() {
-  var table = $('#initials').DataTable();
-
-
-  $('#initials tbody').on( 'click', 'tr', function () {
-    if ( $(this).hasClass('selected') ) {
-      $(this).removeClass('selected');
-    }
-    else {
-      table.$('tr.selected').removeClass('selected');
-      $(this).addClass('selected');
-    }
-    var custid = $(this).children(":first").text();
-    var custString = custid.toString();
-
-
-
-    var link;
-    link = 'pre_employment/edit/' + custString;
-    window.location = link;
-
-  } );
-});
-
-
 
 
 /**

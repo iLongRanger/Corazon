@@ -18,9 +18,16 @@ class EmploymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function datatable()
+    public function getAddEditRemoveColumnData()
     {
-        return Datatables::of(Employment::query())->make(true);
+        $employments = Employment::select(['id', 'name', 'department_id',  'position_id'])->get();
+
+        return Datatables::of($employments)
+            ->addColumn('action', function ($employment) {
+                return '<a href="/employment/edit/'.$employment->id.'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+
+            })
+            ->make(true);
     }
     public function index()
     {

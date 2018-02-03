@@ -25,9 +25,9 @@ class RoleController extends Controller
 
         return Datatables::of($roles)
             ->addColumn('action', function ($role) {
-                return '<a href="/roles/'.$role->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                return '<a href="/roles/edit/'.$role->id.'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+
             })
-           
             ->make(true);
     }
 
@@ -38,7 +38,7 @@ class RoleController extends Controller
     public function index()
     {
 
-        return view('headoffice.role.index');
+        return view('human_resources.maintenance.role.index');
     }
 
     /**
@@ -48,7 +48,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('headoffice.role.create');
+        return view('human_resources.maintenance.role.create');
     }
 
     /**
@@ -87,7 +87,7 @@ class RoleController extends Controller
     public function edit($id)
     {
         $role = Role::findOrFail($id);
-        return view('headoffice.role.edit', compact('role'));
+        return view('human_resources.maintenance.role.edit', compact('role'));
     }
 
     /**

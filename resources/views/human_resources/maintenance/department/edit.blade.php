@@ -13,7 +13,7 @@
             <!-- Default box -->
             <div class="box  box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Update Department</h3>
+                    <h3 class="box-title">Update/ View Department</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -29,21 +29,24 @@
 
                     {!! Form::model($department, ['method'=>'PATCH', 'action'=>['DepartmentController@update', $department->id], 'files'=> true])!!}
 
-                    <div class="form-group">
-                        {!!Form::label('name', 'Name:')!!}
-                        {!!Form::text('name', null, ['class'=>'form-control'])!!}
+                    <div class = "col-lg-6">
+                        <div class="form-group">
+                            {!!Form::label('name', 'Name')!!}
+                            {!!Form::text('name', null, ['class'=>'form-control'])!!}
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        {!!Form::label('description', 'Description:')!!}
-                        {!!Form::text('description', null, ['class'=>'form-control'])!!}
+                    <div class = "col-lg-6 center">
+                        <div class="form-group">
+                            {!!Form::label('description', 'Description')!!}
+                            {!!Form::text('description', null, ['class'=>'form-control'])!!}
+                        </div>
                     </div>
-
-
-                    <div class = "form-group">
-                        {!!Form::submit('department', ['class'=>'btn btn-primary'])!!}
+                    <div class ="col-md-6">
+                        <div class = "form-group">
+                            {!!Form::submit('Update Department', ['class'=>'btn btn-warning'])!!}
+                        </div>
                     </div>
-
                     {!! Form::close() !!}
 
                 </div>

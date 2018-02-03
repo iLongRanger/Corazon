@@ -24,9 +24,16 @@ class PreEmploymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function datatable()
+    public function getAddEditRemoveColumnData()
     {
-        return Datatables::of(PreEmployment::query())->make(true);
+        $pre_employments = PreEmployment::select(['id', 'fileNo', 'name',  'created_at', 'updated_at'])->get();
+
+        return Datatables::of($pre_employments)
+            ->addColumn('action', function ($pre_employment) {
+                return '<a href="/pre_employment/edit/'.$pre_employment->id.'" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>';
+
+            })
+            ->make(true);
     }
     public function index()
     {

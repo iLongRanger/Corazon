@@ -12,13 +12,16 @@ class Employment extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'id', 'name', 'department_id', 'role_id', 'salary', 'dateHired', 'status', '',
+        'id', 'name', 'department_id', 'position_id', 'salary', 'dateHired', 'status', '',
     ];
     public function pre_employment(){
         return  $this->belongsTo('App\PreEmployment');
     }
     public function department(){
         return $this->belongsTo('App\Department');
+    }
+    public function position(){
+        return $this->belongsTo('App\Position');
     }
 }
 

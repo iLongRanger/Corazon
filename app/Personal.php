@@ -12,7 +12,9 @@ class Personal extends Model
 
 
     protected $fillable = [
-   'id_number', 'name', 'photo_id', 'contactNumber', 'address', 'birthday','email', '',
+   'id_number', 'name', 'photo_id', 'contactNumber', 'address', 'birthday','email',
+        'pagibig', 'philhealth', 'tin', 'sss', '',
+
     ];
 
     public function photo(){

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Department;
+use Yajra\DataTables\Contracts\DataTable;
 use Yajra\DataTables\Facades\Datatables;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
@@ -14,15 +15,22 @@ class DepartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function datatable()
+    public function getAddEditRemoveColumnData()
     {
-        return Datatables::of(Department::query())->make(true);
+        $departments = Department::select(['id', 'name', 'description', 'created_at', 'updated_at'])->get();
+
+        return DataTables::of($departments)
+            ->addColumn('action', function ($department){
+                return '<a href="/departments/edit/'.$department->id.'"class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>';
+            })
+            ->make(true);
     }
+
+
     public function index()
     {
 
-        return view('headoffice.department.index');
+        return view('human_resources.maintenance.department.index');
     }
 
     /**
@@ -32,7 +40,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view('headoffice.department.create');
+        return view('human_resources.maintenance.department.create');
     }
 
     /**
@@ -45,7 +53,7 @@ class DepartmentController extends Controller
     {
         $input = $request->all();
         Department::create($input); // will save everything on database
-        Session::flash('created_department', 'The Department has been created.');
+        Session::flash('created_department', 'The department has been created.');
         return redirect('/departments');
     }
 
@@ -69,7 +77,7 @@ class DepartmentController extends Controller
     public function edit($id)
     {
         $department = Department::findOrFail($id);
-        return view('headoffice.department.edit', compact('department'));
+        return view('human_resources.maintenance.department.edit', compact('department'));
     }
 
     /**
@@ -84,7 +92,7 @@ class DepartmentController extends Controller
         $department = Department::findOrFail($id);
         $input = $request->all(); // to persist
         $department->Update($input); //will update the data on database
-        Session::flash('updated_department', 'Department has been Updated');
+        Session::flash('updated_department', 'Department record has been updated');
         return redirect('/departments');
     }
 

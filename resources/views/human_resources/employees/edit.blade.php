@@ -197,7 +197,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 {!!Form::label('role_id', 'Role:')!!}
-                                {!!Form::select('role_id', [''=>'Choose Position'] + $roles, null, ['class'=>'form-control'])!!}
+                                {!!Form::select('role_id', [''=>'Positions'] + $roles, null, ['class'=>'form-control'])!!}
                             </div>
                         </div>
                         <div class="row">
@@ -206,7 +206,7 @@
                                 {!!Form::text('started_date', null, ['class'=>'form-control','placeholder'=>'MM/DD/YYYY'])!!}
                             </div>
                             <div class="form-group form-control-required col-md-4">
-                                {!!Form::label('department_id', 'Department:')!!}
+                                {!!Form::label('department_id', 'department')!!}
                                 {!!Form::select('department_id', [''=>'Choose Department'] + $departments, null, ['class'=>'form-control'])!!}
                             </div>
                             <div class="form-group col-md-4">

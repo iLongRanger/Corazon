@@ -7,7 +7,7 @@
 
 @section('scripts')
 @parent
-<script src="/js/headoffice/role/index.js"></script>
+<script src="/js/human_resources/maintenance/role/index.js"></script>
 @endsection
 
 @section('main-content')
@@ -34,7 +34,7 @@
             <!-- Default box -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Roless</h3>
+                    <h4 class="text-black">Roles List</h4>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -42,6 +42,14 @@
                         <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
                             <i class="fa fa-times"></i></button>
                     </div>
+                </div>
+                <div class="col-lg-2 pull-left">
+                    <a href="/roles/create">
+                        <button type="button" class="btn btn-block btn-success">
+                            <i class="fa fa-plus"></i>
+                            <span>Create new</span>
+                        </button>
+                    </a>
                 </div>
                 <div class="box-body">
 
@@ -54,11 +62,9 @@
                                             <table id="roles-table" class="table table-striped">
                                                 <thead>
                                                 <tr>
-                                                    <th>Role No.</th>
+                                                    <th>No.</th>
                                                     <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>created</th>
-                                                    <th>updated</th>
+                                                    <th>Description</th>
                                                     <th>Actions</th>
                                                 </tr>
                                                 </thead>

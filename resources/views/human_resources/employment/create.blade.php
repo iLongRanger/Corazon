@@ -50,14 +50,14 @@
                     <div class ='row'>
                         <div class = 'col-lg-4'>
                             <div class="form-group">
-                                {!!Form::label('department_id', 'Department')!!}
+                                {!!Form::label('department_id', 'department')!!}
                                 {!!Form::select('department_id', [''=>'Choose Department'] + $departments, null, ['class'=>'form-control'])!!}
                             </div>
                         </div>
                         <div class = 'col-lg-4'>
                             <div class="form-group">
                                 {!!Form::label('role_id', 'Role')!!}
-                                {!!Form::select('role_id', [''=>'Choose Position'] + $role, null, ['class'=>'form-control'])!!}
+                                {!!Form::select('role_id', [''=>'Choose role'] + $role, null, ['class'=>'form-control'])!!}
                             </div>
                         </div>
                     </div>

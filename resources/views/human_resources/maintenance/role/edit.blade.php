@@ -13,7 +13,7 @@
             <!-- Default box -->
             <div class="box  box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Create New Role</h3>
+                    <h3 class="box-title">Update Role</h3>
 
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -27,27 +27,36 @@
                     @include('includes.form_error')
 
 
-                    {!! Form::open(['method'=>'POST', 'action'=>'RoleController@store', 'files'=> true])!!}
-
-                    <div class="form-group">
-                        {!!Form::label('name', 'Name:')!!}
-                        {!!Form::text('name', null, ['class'=>'form-control'])!!}
-                    </div>
-
-                    <div class="form-group">
-                        {!!Form::label('description', 'Description:')!!}
-                        {!!Form::text('description', null, ['class'=>'form-control'])!!}
+                    {!! Form::model($role, ['method'=>'PATCH', 'action'=>['RoleController@update', $role->id], 'files'=> true])!!}
+                    <div class = 'row'>
+                        <div class='col-md-6'>
+                            <div class="form-group">
+                                {!!Form::label('name', 'Name:')!!}
+                                {!!Form::text('name', null, ['class'=>'form-control'])!!}
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <div class="form-group">
+                                {!!Form::label('description', 'Description:')!!}
+                                {!!Form::text('description', null, ['class'=>'form-control'])!!}
+                            </div>
+                        </div>
                     </div>
 
 
                     <div class = "form-group">
-                        {!!Form::submit('Create Role', ['class'=>'btn btn-primary'])!!}
+                        {!!Form::submit('Update Role Record', ['class'=>'btn btn-warning'])!!}
                     </div>
 
                     {!! Form::close() !!}
+
                 </div>
-            </div> <!-- /.box-body -->
+                <!-- /.box-body -->
+            </div>
         </div>
-    </div>  <!-- /.box -->
-    <!--</div>-->
+        <!-- /.box -->
+
+        <!--</div>-->
+    </div>
+    </div>
 @endsection

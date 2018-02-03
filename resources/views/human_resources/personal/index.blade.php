@@ -55,11 +55,12 @@
                                             <table id="personal-table" class="table table-striped table-hover">
                                                 <thead>
                                                 <tr>
-                                                    <th>Id</th>
+                                                    <th>No.</th>
                                                     <th>Identification Number</th>
                                                     <th>Name</th>
                                                     <th>Contact Number</th>
                                                     <th>Email Address</th>
+                                                    <th>Actions</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>

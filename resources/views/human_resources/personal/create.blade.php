@@ -28,17 +28,17 @@
 
 
                     {!! Form::open(['method'=>'POST', 'action'=>'PersonalController@store', 'files'=> true])!!}
-
+                    <h5>Personal Information</h5>
                     <div class = 'row'>
                         <div class = 'col-lg-4'>
                             <div class="form-group">
-                                {!!Form::label('id_number', 'Application Number:')!!}
+                                {!!Form::label('id_number', 'Application Number')!!}
                                 {!!Form::text('id_number', null, ['class'=>'form-control','placeholder'=>'Application Number'])!!}
                             </div>
                         </div>
                         <div class = 'col-lg-4'>
                             <div class="form-group">
-                                {!!Form::label('name', 'Name:')!!}
+                                {!!Form::label('name', 'Name')!!}
                                 {!!Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Last name, First Name, Middle name'])!!}
                             </div>
                         </div>
@@ -52,13 +52,13 @@
                     <div class ='row'>
                         <div class = 'col-lg-4'>
                             <div class="form-group">
-                                {!!Form::label('contactNumber', 'Contact Number:')!!}
+                                {!!Form::label('contactNumber', 'Contact Number')!!}
                                 {!!Form::text('contactNumber', null, ['class'=>'form-control', 'placeholder'=>'0000-0000-000'])!!}
                             </div>
                         </div>
                         <div class = 'col-lg-8'>
                             <div class="form-group">
-                                {!!Form::label('address', 'Complete Address:')!!}
+                                {!!Form::label('address', 'Complete Address')!!}
                                 {!!Form::text('address', null, ['class'=>'form-control', 'placeholder'=>'Complete Address'])!!}
                             </div>
                         </div>
@@ -66,14 +66,41 @@
                     <div class = 'row'>
                         <div class = 'col-lg-4'>
                             <div class="form-group">
-                                {!!Form::label('birthday', 'Date of birth:')!!}
+                                {!!Form::label('birthday', 'Date of birth')!!}
                                 {!!Form::date('birthday', null, ['class'=>'form-control'])!!}
                             </div>
                         </div>
                         <div class = 'col-lg-8'>
                             <div class="form-group">
-                                {!!Form::label('email', 'Email Address:')!!}
+                                {!!Form::label('email', 'Email Address')!!}
                                 {!!Form::email('email', null, ['class'=>'form-control', 'placeholder'=>'example@host.com'])!!}
+                            </div>
+                        </div>
+                    </div>
+                    <h5>Government Numbers</h5>
+                    <div class ='row'>
+                        <div class = 'col-lg-3'>
+                            <div class="form-group">
+                                {!!Form::label('pagibig', 'Pag-ibig number')!!}
+                                {!!Form::text('pagibig', null, ['class'=>'form-control', 'placeholder'=>'0000-0000-000'])!!}
+                            </div>
+                        </div>
+                        <div class = 'col-lg-3'>
+                            <div class="form-group">
+                                {!!Form::label('philhealth', 'Philhealth number')!!}
+                                {!!Form::text('philhealth', null, ['class'=>'form-control', 'placeholder'=>'0000-0000-000'])!!}
+                            </div>
+                        </div>
+                        <div class = 'col-lg-3'>
+                            <div class="form-group">
+                                {!!Form::label('tin', 'TIN number')!!}
+                                {!!Form::text('tin', null, ['class'=>'form-control', 'placeholder'=>'0000-0000-000'])!!}
+                            </div>
+                        </div>
+                        <div class = 'col-lg-3'>
+                            <div class="form-group">
+                                {!!Form::label('sss', 'SSS number')!!}
+                                {!!Form::text('sss', null, ['class'=>'form-control', 'placeholder'=>'0000-0000-000'])!!}
                             </div>
                         </div>
                     </div>

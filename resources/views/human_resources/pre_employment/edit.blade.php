@@ -19,27 +19,32 @@
                                     <thead>
                                     <tr>
                                         <th>
-                                            <span class ='fa fa-file'>
+                                            <i class ='fa fa-file'></i>
+                                            <span >
                                                 File Number
                                             </span>
                                         </th>
                                         <th>
-                                            <span class = "fa fa-user">
+                                            <i class = "fa fa-user"></i>
+                                            <span>
                                                 Applicant's Name
                                             </span>
                                         </th>
                                         <th>
-                                            <span class='fa  fa-calendar-check-o'>
+                                            <i class='fa  fa-calendar-check-o'></i>
+                                            <span >
                                             Recieved Date
                                             </span>
                                         </th>
                                         <th>
-                                            <span class ='fa fa-calendar-plus-o'>
+                                            <i class ='fa fa-calendar-plus-o'></i>
+                                            <span >
                                                 Last Update
                                             </span>
                                         </th>
                                         <th>
-                                            <span class="fa fa-bookmark">
+                                            <i  class="fa fa-bookmark"></i>
+                                            <span>
                                                 Status
                                             </span>
                                         </th>
@@ -52,10 +57,10 @@
                                         <td>{{$pre_employment->created_at->diffForHumans()}}</td>
                                         <td>{{$pre_employment->updated_at->diffForHumans()}}</td>
                                         <td>
-                                            @if($pre_employment->status == 'Complete')
-                                                <span class="label label-success">{{$pre_employment->status}}</span>
+                                            @if($pre_employment->status == '1')
+                                                <span class="label label-success">Complete</span>
                                             @else
-                                                <span class="label label-danger">{{$pre_employment->status}}</span>
+                                                <span class="label label-danger">Incomplete</span>
                                             @endif
                                         </td>
                                     </tr>
@@ -76,17 +81,20 @@
                                     <thead>
                                         <tr>
                                             <th>
-                                                <span class="fa fa-file-archive-o">
+                                                <i  class="fa fa-file-archive-o"></i>
+                                                <span>
                                                     File Type
                                                 </span>
                                             </th>
                                             <th>
-                                                <span class="fa fa-download">
+                                                <i  class="fa fa-download"></i>
+                                                <span>
                                                     Download file
                                                 </span>
                                             </th>
                                             <th>
-                                                <span class="fa fa-upload">
+                                                <i  class="fa fa-upload "></i>
+                                                <span>
                                                     Update
                                                 </span>
                                             </th>

@@ -35,7 +35,6 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h4 class="text-black">Pre-employment Requirements Records</h4>
-                    <p class="small col-md-3"> Click on data to view or make changes.</p>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fa fa-minus"></i></button>
@@ -54,12 +53,12 @@
                                             <table id="initials" class="table table-striped table-hover">
                                                 <thead>
                                                 <tr>
-                                                    <th>Record Number</th>
+                                                    <th>No.</th>
                                                     <th>File Number</th>
                                                     <th>Record Owner</th>
-                                                    <th>Status</th>
                                                     <th>Received Date</th>
                                                     <th>Updated at</th>
+                                                    <th>Actions</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>

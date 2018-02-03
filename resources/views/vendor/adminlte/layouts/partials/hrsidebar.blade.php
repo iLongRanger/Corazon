@@ -37,33 +37,60 @@
             <li class="active">
                 <a href="{{ url('home') }}"><i class='fa fa-home text-red'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a>
             </li>
-            <li class="header text-center"><span>Human Resources</span></li>
-            <li class="treeview">
-                <a href=""><i class="fa fa-user text-purple"></i><span>Personal Information</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="/personal"><i class="fa fa-users text-blue"></i><span>All Records</span></a></li>
-                    <li><a href="/personal/create"><i class="fa fa-user-plus text-success"></i><span>New Record</span></a></li>
-                </ul>
 
+            <li class="header text-center"><span>Maintanance</span></li>
+            <li>
+                <a href="/departments"><i class="fa  fa-building text-purple"></i>
+                        <span>
+                            Departments
+                        </span>
+                </a>
+            </li>
+            <li>
+                <a href="/roles"><i class="fa  fa-anchor text-purple"></i>
+                    <span>
+                            Roles
+                        </span>
+                </a>
             </li>
 
-            <li class="treeview">
-                <a href=""><i class="fa fa-newspaper-o text-purple"></i><span>Pre Employment Records</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="/pre_employment"><i class="fa fa-database text-blue"></i><span>All Records</span></a></li>
-                    <li><a href="/pre_employment/create"><i class="fa fa-plus text-success"></i><span>New Record</span></a></li>
-                </ul>
+            <li class="header text-center"><span>On Boarding</span></li>
 
+                    <li class="treeview">
+                        <a href=""><i class="fa fa-user text-purple"></i><span>Personal Information</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/personal"><i class="fa fa-users text-blue"></i><span>All Records</span></a></li>
+                            <li><a href="/personal/create"><i class="fa fa-user-plus text-success"></i><span>New Record</span></a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href=""><i class="fa fa-newspaper-o text-purple"></i><span>Pre Employment Records</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/pre_employment"><i class="fa fa-database text-blue"></i><span>All Records</span></a></li>
+                            <li><a href="/pre_employment/create"><i class="fa fa-plus text-success"></i><span>New Record</span></a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href=""><i class="fa fa-black-tie text-purple"></i><span>Employment Records</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="/employment"><i class="fa fa-database text-blue"></i><span>All Records</span></a></li>
+                            <li><a href="/employment/create"><i class="fa fa-plus text-success"></i><span>New Record</span></a></li>
+                        </ul>
+                    </li>
+
+            <li class="header text-center"><span>Employee Management</span></li>
+            <li class="treeview">
+                <a href=""><i class="fa fa-dollar text-purple"></i><span>Payroll Management</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/payroll"><i class="fa fa-database text-blue"></i><span>All Payrolls</span></a></li>
+                    <li><a href="/payroll/create"><i class="fa fa-plus text-success"></i><span>New Payroll</span></a></li>
+                </ul>
             </li>
 
-            <li class="treeview">
-                <a href=""><i class="fa fa-black-tie text-purple"></i><span>Employment Records</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="/employment"><i class="fa fa-database text-blue"></i><span>All Records</span></a></li>
-                    <li><a href="/employment/create"><i class="fa fa-plus text-success"></i><span>New Record</span></a></li>
-                </ul>
-
-            </li>
 
         </ul><!-- /.sidebar-menu -->
     </section>
